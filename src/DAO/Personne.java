@@ -1,21 +1,24 @@
 package DAO;
 
 public class Personne {
-    protected int id;
+    protected static int id = 0;
+    protected int nbr;
     protected String nom;
     protected String prenom;
     protected String telephone;
     protected String email;
 
     public Personne( String nom, String prenom, String telephone, String email) {
+        id++;
+        nbr = id;
         this.nom = nom;
         this.prenom = prenom;
         this.telephone = telephone;
         this.email = email;
     }
     //getters
-    public int getId() {
-        return id;
+    public int getNbr() {
+        return nbr;
     }
 
     public String getNom() {
@@ -48,5 +51,16 @@ public class Personne {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "Personne{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", telephone='" + telephone + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
