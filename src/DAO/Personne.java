@@ -7,8 +7,7 @@ public class Personne {
     protected String telephone;
     protected String email;
 
-    public Personne(int id, String nom, String prenom, String telephone, String email) {
-        this.id = id;
+    public Personne( String nom, String prenom, String telephone, String email) {
         this.nom = nom;
         this.prenom = prenom;
         this.telephone = telephone;
