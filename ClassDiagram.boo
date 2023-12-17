@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{AC69FC2D-85B0-466A-943D-FC3C09CB970E}" Label="" LastModificationDate="1702754394" Name="ModeleOrienteObjet_1" Objects="351" Symbols="39" Target="Java" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="15.1.0.2850"?>
+<?PowerDesigner AppLocale="UTF16" ID="{AC69FC2D-85B0-466A-943D-FC3C09CB970E}" Label="" LastModificationDate="1702757019" Name="ModeleOrienteObjet_1" Objects="164" Symbols="37" Target="Java" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="15.1.0.2850"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -1786,7 +1786,7 @@ MULA 0 Arial,8,N</a:FontList>
 <a:CreationDate>1702587845</a:CreationDate>
 <a:ModificationDate>1702730694</a:ModificationDate>
 <a:SourceTextOffset>(-2769, -587)</a:SourceTextOffset>
-<a:Rect>((-28040,-22297), (-10980,-11991))</a:Rect>
+<a:Rect>((-28077,-22297), (-10980,-11991))</a:Rect>
 <a:ListOfPoints>((-10980,-22297),(-10980,-16269),(-28040,-16269),(-28040,-11991))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
@@ -1807,7 +1807,7 @@ MULA 0 Arial,8,N</a:FontList>
 <o:AssociationSymbol Id="o56">
 <a:CreationDate>1702592005</a:CreationDate>
 <a:ModificationDate>1702729789</a:ModificationDate>
-<a:Rect>((-45078,-7627), (-19922,6127))</a:Rect>
+<a:Rect>((-45041,-7627), (-19922,6127))</a:Rect>
 <a:ListOfPoints>((-19922,6127),(-43054,6127),(-43054,-7627))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
@@ -3544,9 +3544,9 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>status</a:Code>
 <a:CreationDate>1702728337</a:CreationDate>
 <a:Creator>Administrateur</a:Creator>
-<a:ModificationDate>1702729033</a:ModificationDate>
+<a:ModificationDate>1702757019</a:ModificationDate>
 <a:Modifier>Administrateur</a:Modifier>
-<a:DataType>boolean</a:DataType>
+<a:DataType>String</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
 </c:Attributes>
@@ -3697,10 +3697,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>getStatus</a:Code>
 <a:CreationDate>1702729033</a:CreationDate>
 <a:Creator>Administrateur</a:Creator>
-<a:ModificationDate>1702729033</a:ModificationDate>
+<a:ModificationDate>1702757019</a:ModificationDate>
 <a:Modifier>Administrateur</a:Modifier>
 <a:Stereotype>Getter</a:Stereotype>
-<a:ReturnType>boolean</a:ReturnType>
+<a:ReturnType>String</a:ReturnType>
 <a:Automatic>1</a:Automatic>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <c:InfluentObject>
@@ -3726,9 +3726,9 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>newStatus</a:Code>
 <a:CreationDate>1702729033</a:CreationDate>
 <a:Creator>Administrateur</a:Creator>
-<a:ModificationDate>1702729033</a:ModificationDate>
+<a:ModificationDate>1702757019</a:ModificationDate>
 <a:Modifier>Administrateur</a:Modifier>
-<a:Parameter.DataType>boolean</a:Parameter.DataType>
+<a:Parameter.DataType>String</a:Parameter.DataType>
 <a:ParameterType>I</a:ParameterType>
 </o:Parameter>
 </c:Parameters>

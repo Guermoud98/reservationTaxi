@@ -11,7 +11,7 @@ CREATE TABLE client (
  email VARCHAR(40)
 
 );
-
+SELECT * FROM client;
 DROP TABLE client;
 
 --Taxi
@@ -22,6 +22,7 @@ CREATE TABLE taxi (
  status VARCHAR(10)
 
 );
+SELECT * FROM taxi;
 DROP TABLE taxi;
 --Conducteur
 
@@ -35,6 +36,7 @@ CREATE TABLE conducteur (
  matricule VARCHAR(10) FOREIGN KEY REFERENCES taxi(matricule)
 
 );
+SELECT * FROM conducteur;
 DROP TABLE conducteur;
 
 --Reservation

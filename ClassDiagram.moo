@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{AC69FC2D-85B0-466A-943D-FC3C09CB970E}" Label="" LastModificationDate="1702757019" Name="ModeleOrienteObjet_1" Objects="164" Symbols="37" Target="Java" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="15.1.0.2850"?>
+<?PowerDesigner AppLocale="UTF16" ID="{AC69FC2D-85B0-466A-943D-FC3C09CB970E}" Label="" LastModificationDate="1702808437" Name="ModeleOrienteObjet_1" Objects="164" Symbols="37" Target="Java" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="15.1.0.2850"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -2435,11 +2435,11 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Operation>
 <o:Operation Id="o96">
 <a:ObjectID>886606C6-E00B-4789-B0EA-E0D89CD4EC20</a:ObjectID>
-<a:Name>getConnection</a:Name>
-<a:Code>getConnection</a:Code>
+<a:Name>getConnexion</a:Name>
+<a:Code>getConnexion</a:Code>
 <a:CreationDate>1702550516</a:CreationDate>
 <a:Creator>Administrateur</a:Creator>
-<a:ModificationDate>1702550543</a:ModificationDate>
+<a:ModificationDate>1702808437</a:ModificationDate>
 <a:Modifier>Administrateur</a:Modifier>
 <a:ReturnType>Connection</a:ReturnType>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
