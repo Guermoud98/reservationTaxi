@@ -1,4 +1,4 @@
-package DAO;
+package Business;
 
 public class Conducteur extends Personne{
 

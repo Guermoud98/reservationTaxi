@@ -1,4 +1,4 @@
-package DAO;
+package Business;
 
 public class Personne {
     protected static int id = 0;
@@ -64,3 +64,4 @@ public class Personne {
                 '}';
     }
 }
+
