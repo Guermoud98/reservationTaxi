@@ -8,7 +8,8 @@ CREATE TABLE client (
  nom VARCHAR(10),
  prenom VARCHAR(10),
  telephone VARCHAR(10),
- email VARCHAR(40)
+ email VARCHAR(40),
+ password VARCHAR(15)
 
 );
 SELECT * FROM client;
@@ -64,13 +65,13 @@ DROP TABLE reservation;
 
 --- insertion ---
 -- Insertion dans la table client
-INSERT INTO client (nom, prenom, telephone, email) VALUES ('NomClient', 'PrenomCl', '123456789', 'client@example.com');
+INSERT INTO client (nom, prenom, telephone, email, password) VALUES ('Guer', 'Maria', '123456789', 'maria.guer@gmail.com', 'M123@');
 
 -- Insertion dans la table taxi
-INSERT INTO taxi (matricule, modele, status) VALUES ('ABC123', 'ModeleTaxi', 'Disponible');
+INSERT INTO taxi (matricule, modele, status) VALUES ('ABC123', 'Dacia', 'Disponible');
 
 -- Insertion dans la table conducteur
-INSERT INTO conducteur (nom, prenom, telephone, email, matricule) VALUES ('NomConduc', 'PrenomCond', '987654321', 'conducteur@example.com', 'ABC123');
+INSERT INTO conducteur (nom, prenom, telephone, email, matricule) VALUES ('Ahmadi', 'Ahmad', '987654321', 'ahmad.ah@gmail.com', 'ABC123');
 
 -- Insertion dans la table reservation
 INSERT INTO reservation (lieuSource, lieuDestination, typePaiement, tarif, date, heure, idClient, idConducteur, matricule)

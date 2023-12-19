@@ -1,24 +1,30 @@
 package Business;
 
 public class Personne {
-    protected static int id = 0;
-    protected int nbr;
+    protected  int id;
     protected String nom;
     protected String prenom;
     protected String telephone;
-    protected String email;
 
-    public Personne( String nom, String prenom, String telephone, String email) {
-        id++;
-        nbr = id;
+
+
+    protected String email;
+    protected String password;
+
+    public Personne( String nom, String prenom, String telephone, String email, String password) {
         this.nom = nom;
         this.prenom = prenom;
         this.telephone = telephone;
         this.email = email;
+        this.password = password;
     }
     //getters
-    public int getNbr() {
-        return nbr;
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNom() {
@@ -52,6 +58,13 @@ public class Personne {
     public void setEmail(String email) {
         this.email = email;
     }
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     @Override
     public String toString() {
@@ -61,6 +74,7 @@ public class Personne {
                 ", prenom='" + prenom + '\'' +
                 ", telephone='" + telephone + '\'' +
                 ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
 }
