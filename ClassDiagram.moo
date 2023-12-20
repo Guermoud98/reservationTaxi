@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{AC69FC2D-85B0-466A-943D-FC3C09CB970E}" Label="" LastModificationDate="1702847687" Name="ModeleOrienteObjet_1" Objects="185" Symbols="37" Target="Java" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="15.1.0.2850"?>
+<?PowerDesigner AppLocale="UTF16" ID="{AC69FC2D-85B0-466A-943D-FC3C09CB970E}" Label="" LastModificationDate="1702934281" Name="ModeleOrienteObjet_1" Objects="171" Symbols="37" Target="Java" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="15.1.0.2850"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -1807,7 +1807,7 @@ MULA 0 Arial,8,N</a:FontList>
 <o:AssociationSymbol Id="o56">
 <a:CreationDate>1702592005</a:CreationDate>
 <a:ModificationDate>1702847687</a:ModificationDate>
-<a:Rect>((-45078,-7627), (-19922,4751))</a:Rect>
+<a:Rect>((-45041,-7627), (-19922,4751))</a:Rect>
 <a:ListOfPoints>((-19922,4751),(-43054,4751),(-43054,-7627))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:ArrowStyle>8</a:ArrowStyle>
@@ -2452,22 +2452,20 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Code>Personne</a:Code>
 <a:CreationDate>1702547976</a:CreationDate>
 <a:Creator>Administrateur</a:Creator>
-<a:ModificationDate>1702834283</a:ModificationDate>
+<a:ModificationDate>1702934281</a:ModificationDate>
 <a:Modifier>Administrateur</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <c:Attributes>
 <o:Attribute Id="o97">
-<a:ObjectID>BF6101EA-B6A4-4179-A2F7-E506179E8B23</a:ObjectID>
+<a:ObjectID>1F0F1310-9B01-40E0-B23E-D01C0BE8FA86</a:ObjectID>
 <a:Name>id</a:Name>
 <a:Code>id</a:Code>
-<a:CreationDate>1702834184</a:CreationDate>
+<a:CreationDate>1702934234</a:CreationDate>
 <a:Creator>Administrateur</a:Creator>
-<a:ModificationDate>1702834219</a:ModificationDate>
+<a:ModificationDate>1702934265</a:ModificationDate>
 <a:Modifier>Administrateur</a:Modifier>
 <a:DataType>int</a:DataType>
-<a:Attribute.Visibility>#</a:Attribute.Visibility>
-<a:InitialValue>0</a:InitialValue>
-<a:Static>1</a:Static>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
 <o:Attribute Id="o98">
 <a:ObjectID>3876108C-1682-49A2-A30D-1DE4C6332188</a:ObjectID>
@@ -2515,13 +2513,13 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Attribute>
 <o:Attribute Id="o102">
 <a:ObjectID>9ED4FC67-73AF-4BB8-851F-770E2BEA7401</a:ObjectID>
-<a:Name>nbr</a:Name>
-<a:Code>nbr</a:Code>
+<a:Name>password</a:Name>
+<a:Code>password</a:Code>
 <a:CreationDate>1702834254</a:CreationDate>
 <a:Creator>Administrateur</a:Creator>
-<a:ModificationDate>1702834293</a:ModificationDate>
+<a:ModificationDate>1702934281</a:ModificationDate>
 <a:Modifier>Administrateur</a:Modifier>
-<a:DataType>int</a:DataType>
+<a:DataType>String</a:DataType>
 <a:Attribute.Visibility>#</a:Attribute.Visibility>
 </o:Attribute>
 </c:Attributes>
@@ -2721,6 +2719,51 @@ LABL 0 Arial,8,N</a:FontList>
 <o:Attribute Ref="o101"/>
 </c:InfluentObject>
 </o:Operation>
+<o:Operation Id="o116">
+<a:ObjectID>7F0B40F0-C003-49B0-A5CD-8FD9ED830B85</a:ObjectID>
+<a:Name>getPassword</a:Name>
+<a:Code>getPassword</a:Code>
+<a:CreationDate>1702934281</a:CreationDate>
+<a:Creator>Administrateur</a:Creator>
+<a:ModificationDate>1702934281</a:ModificationDate>
+<a:Modifier>Administrateur</a:Modifier>
+<a:Stereotype>Getter</a:Stereotype>
+<a:ReturnType>String</a:ReturnType>
+<a:Automatic>1</a:Automatic>
+<a:TemplateBody>%DefaultBody%</a:TemplateBody>
+<c:InfluentObject>
+<o:Attribute Ref="o102"/>
+</c:InfluentObject>
+</o:Operation>
+<o:Operation Id="o117">
+<a:ObjectID>D2510FDC-DFE4-4881-A886-6CBB0EF2A245</a:ObjectID>
+<a:Name>setPassword</a:Name>
+<a:Code>setPassword</a:Code>
+<a:CreationDate>1702934281</a:CreationDate>
+<a:Creator>Administrateur</a:Creator>
+<a:ModificationDate>1702934281</a:ModificationDate>
+<a:Modifier>Administrateur</a:Modifier>
+<a:Stereotype>Setter</a:Stereotype>
+<a:ReturnType>void</a:ReturnType>
+<a:Automatic>1</a:Automatic>
+<a:TemplateBody>%DefaultBody%</a:TemplateBody>
+<c:Parameters>
+<o:Parameter Id="o118">
+<a:ObjectID>AA9C08CE-BE23-4C53-9BAA-BFEDBCF47217</a:ObjectID>
+<a:Name>newPassword</a:Name>
+<a:Code>newPassword</a:Code>
+<a:CreationDate>1702934281</a:CreationDate>
+<a:Creator>Administrateur</a:Creator>
+<a:ModificationDate>1702934281</a:ModificationDate>
+<a:Modifier>Administrateur</a:Modifier>
+<a:Parameter.DataType>String</a:Parameter.DataType>
+<a:ParameterType>I</a:ParameterType>
+</o:Parameter>
+</c:Parameters>
+<c:InfluentObject>
+<o:Attribute Ref="o102"/>
+</c:InfluentObject>
+</o:Operation>
 </c:Operations>
 </o:Class>
 <o:Class Id="o83">
@@ -2733,7 +2776,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>Administrateur</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <c:Operations>
-<o:Operation Id="o116">
+<o:Operation Id="o119">
 <a:ObjectID>FC79BF7A-4889-4BC6-841F-DEBDFC7F93FE</a:ObjectID>
 <a:Name>gererProfil</a:Name>
 <a:Code>gererProfil</a:Code>
@@ -2747,10 +2790,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <a:WSDLDataType>void</a:WSDLDataType>
 <c:InfluentObject>
-<o:Operation Ref="o117"/>
+<o:Operation Ref="o120"/>
 </c:InfluentObject>
 </o:Operation>
-<o:Operation Id="o118">
+<o:Operation Id="o121">
 <a:ObjectID>E581907F-D8B0-455A-97F3-743E7E359CA0</a:ObjectID>
 <a:Name>donnerAvis</a:Name>
 <a:Code>donnerAvis</a:Code>
@@ -2764,7 +2807,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <a:WSDLDataType>void</a:WSDLDataType>
 <c:Parameters>
-<o:Parameter Id="o119">
+<o:Parameter Id="o122">
 <a:ObjectID>04221E04-4B56-4715-9F5D-AD33F6464F17</a:ObjectID>
 <a:Name>t</a:Name>
 <a:Code>t</a:Code>
@@ -2777,10 +2820,10 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Parameter>
 </c:Parameters>
 <c:InfluentObject>
-<o:Operation Ref="o120"/>
+<o:Operation Ref="o123"/>
 </c:InfluentObject>
 </o:Operation>
-<o:Operation Id="o121">
+<o:Operation Id="o124">
 <a:ObjectID>F7BAECC1-134D-4A5F-BFDC-0BF1BC67BC6F</a:ObjectID>
 <a:Name>consulterHistoriqueReservation</a:Name>
 <a:Code>consulterHistoriqueReservation</a:Code>
@@ -2793,10 +2836,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Automatic>1</a:Automatic>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <c:InfluentObject>
-<o:Operation Ref="o122"/>
+<o:Operation Ref="o125"/>
 </c:InfluentObject>
 </o:Operation>
-<o:Operation Id="o123">
+<o:Operation Id="o126">
 <a:ObjectID>A16E6FFB-E39E-4C96-ADBF-712F755777F8</a:ObjectID>
 <a:Name>updateInfo</a:Name>
 <a:Code>updateInfo</a:Code>
@@ -2810,10 +2853,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <a:WSDLDataType>xsd:int</a:WSDLDataType>
 <c:InfluentObject>
-<o:Operation Ref="o124"/>
+<o:Operation Ref="o127"/>
 </c:InfluentObject>
 </o:Operation>
-<o:Operation Id="o125">
+<o:Operation Id="o128">
 <a:ObjectID>90FF69C1-200A-4F16-95CA-9261A1095E03</a:ObjectID>
 <a:Name>register</a:Name>
 <a:Code>register</a:Code>
@@ -2827,7 +2870,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <a:WSDLDataType>void</a:WSDLDataType>
 <c:Parameters>
-<o:Parameter Id="o126">
+<o:Parameter Id="o129">
 <a:ObjectID>CBBF27B5-F33A-40F2-AF7B-E24BEC0E2A32</a:ObjectID>
 <a:Name>p</a:Name>
 <a:Code>p</a:Code>
@@ -2844,10 +2887,10 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Parameter>
 </c:Parameters>
 <c:InfluentObject>
-<o:Operation Ref="o127"/>
+<o:Operation Ref="o130"/>
 </c:InfluentObject>
 </o:Operation>
-<o:Operation Id="o128">
+<o:Operation Id="o131">
 <a:ObjectID>4B394313-0752-4935-81E3-369999B7A28D</a:ObjectID>
 <a:Name>login</a:Name>
 <a:Code>login</a:Code>
@@ -2861,7 +2904,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <a:WSDLDataType>void</a:WSDLDataType>
 <c:Parameters>
-<o:Parameter Id="o129">
+<o:Parameter Id="o132">
 <a:ObjectID>EA85783D-D8C3-469C-AA67-57E16E8B6F4A</a:ObjectID>
 <a:Name>email</a:Name>
 <a:Code>email</a:Code>
@@ -2873,7 +2916,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Parameter.DataType>String</a:Parameter.DataType>
 <a:ParameterType>I</a:ParameterType>
 </o:Parameter>
-<o:Parameter Id="o130">
+<o:Parameter Id="o133">
 <a:ObjectID>1807226E-09F3-421D-ABE4-A4C720CA7122</a:ObjectID>
 <a:Name>password</a:Name>
 <a:Code>password</a:Code>
@@ -2887,7 +2930,7 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Parameter>
 </c:Parameters>
 <c:InfluentObject>
-<o:Operation Ref="o131"/>
+<o:Operation Ref="o134"/>
 </c:InfluentObject>
 </o:Operation>
 </c:Operations>
@@ -2902,7 +2945,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>Administrateur</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <c:Operations>
-<o:Operation Id="o132">
+<o:Operation Id="o135">
 <a:ObjectID>2B18BE18-3195-43AA-87A1-983B559B7D35</a:ObjectID>
 <a:Name>register</a:Name>
 <a:Code>register</a:Code>
@@ -2916,7 +2959,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <a:WSDLDataType>void</a:WSDLDataType>
 <c:Parameters>
-<o:Parameter Id="o133">
+<o:Parameter Id="o136">
 <a:ObjectID>35736487-3DE8-44C5-8F7C-EB9125BA051B</a:ObjectID>
 <a:Name>p</a:Name>
 <a:Code>p</a:Code>
@@ -2929,10 +2972,10 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Parameter>
 </c:Parameters>
 <c:InfluentObject>
-<o:Operation Ref="o127"/>
+<o:Operation Ref="o130"/>
 </c:InfluentObject>
 </o:Operation>
-<o:Operation Id="o134">
+<o:Operation Id="o137">
 <a:ObjectID>2AC2CC63-90A5-48C0-8079-C21E296AF615</a:ObjectID>
 <a:Name>login</a:Name>
 <a:Code>login</a:Code>
@@ -2946,7 +2989,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <a:WSDLDataType>void</a:WSDLDataType>
 <c:Parameters>
-<o:Parameter Id="o135">
+<o:Parameter Id="o138">
 <a:ObjectID>72FD3132-AB43-4DE2-89E4-777CC323AE83</a:ObjectID>
 <a:Name>email</a:Name>
 <a:Code>email</a:Code>
@@ -2958,7 +3001,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Parameter.DataType>String</a:Parameter.DataType>
 <a:ParameterType>I</a:ParameterType>
 </o:Parameter>
-<o:Parameter Id="o136">
+<o:Parameter Id="o139">
 <a:ObjectID>BFA78E20-D204-40D0-92C0-51D8DF661774</a:ObjectID>
 <a:Name>password</a:Name>
 <a:Code>password</a:Code>
@@ -2972,10 +3015,10 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Parameter>
 </c:Parameters>
 <c:InfluentObject>
-<o:Operation Ref="o131"/>
+<o:Operation Ref="o134"/>
 </c:InfluentObject>
 </o:Operation>
-<o:Operation Id="o137">
+<o:Operation Id="o140">
 <a:ObjectID>4CF3FA8D-AB83-46CC-90C3-3EF0DF19361D</a:ObjectID>
 <a:Name>consulterHistoriqueReservation</a:Name>
 <a:Code>consulterHistoriqueReservation</a:Code>
@@ -2989,10 +3032,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <a:WSDLDataType>void</a:WSDLDataType>
 <c:InfluentObject>
-<o:Operation Ref="o122"/>
+<o:Operation Ref="o125"/>
 </c:InfluentObject>
 </o:Operation>
-<o:Operation Id="o138">
+<o:Operation Id="o141">
 <a:ObjectID>32E2C9D4-1D7A-4CDF-8C2D-D17CCDA6200D</a:ObjectID>
 <a:Name>updateInfo</a:Name>
 <a:Code>updateInfo</a:Code>
@@ -3006,7 +3049,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <a:WSDLDataType>xsd:int</a:WSDLDataType>
 <c:InfluentObject>
-<o:Operation Ref="o124"/>
+<o:Operation Ref="o127"/>
 </c:InfluentObject>
 </o:Operation>
 </c:Operations>
@@ -3021,7 +3064,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>Administrateur</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <c:Operations>
-<o:Operation Id="o139">
+<o:Operation Id="o142">
 <a:ObjectID>3B41068A-A237-48EA-91D4-FE3466F4A321</a:ObjectID>
 <a:Name>Client</a:Name>
 <a:Code>Client</a:Code>
@@ -3033,7 +3076,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Automatic>1</a:Automatic>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <c:Parameters>
-<o:Parameter Id="o140">
+<o:Parameter Id="o143">
 <a:ObjectID>FA805FE9-7E0E-41BA-815E-6014BD783E0E</a:ObjectID>
 <a:Name>idClient</a:Name>
 <a:Code>idClient</a:Code>
@@ -3044,7 +3087,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Parameter.DataType>int</a:Parameter.DataType>
 <a:ParameterType>I</a:ParameterType>
 </o:Parameter>
-<o:Parameter Id="o141">
+<o:Parameter Id="o144">
 <a:ObjectID>46DA12EF-B359-4615-9764-2A38C165E935</a:ObjectID>
 <a:Name>nom</a:Name>
 <a:Code>nom</a:Code>
@@ -3055,7 +3098,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Parameter.DataType>String</a:Parameter.DataType>
 <a:ParameterType>I</a:ParameterType>
 </o:Parameter>
-<o:Parameter Id="o142">
+<o:Parameter Id="o145">
 <a:ObjectID>D85D0379-1FF8-4B35-B450-3B8AE6D514AE</a:ObjectID>
 <a:Name>prenom</a:Name>
 <a:Code>prenom</a:Code>
@@ -3066,7 +3109,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Parameter.DataType>String</a:Parameter.DataType>
 <a:ParameterType>I</a:ParameterType>
 </o:Parameter>
-<o:Parameter Id="o143">
+<o:Parameter Id="o146">
 <a:ObjectID>CB4F6A21-0BE9-4AA5-87DC-511CC6CBD13A</a:ObjectID>
 <a:Name>telephone</a:Name>
 <a:Code>telephone</a:Code>
@@ -3077,7 +3120,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Parameter.DataType>String</a:Parameter.DataType>
 <a:ParameterType>I</a:ParameterType>
 </o:Parameter>
-<o:Parameter Id="o144">
+<o:Parameter Id="o147">
 <a:ObjectID>644C4CED-D345-427C-9206-AEA33A53D4B3</a:ObjectID>
 <a:Name>email</a:Name>
 <a:Code>email</a:Code>
@@ -3105,7 +3148,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>Administrateur</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <c:Operations>
-<o:Operation Id="o145">
+<o:Operation Id="o148">
 <a:ObjectID>BF01298B-51E1-43A1-9348-7C958FEE7623</a:ObjectID>
 <a:Name>Conducteur</a:Name>
 <a:Code>Conducteur</a:Code>
@@ -3117,7 +3160,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Automatic>1</a:Automatic>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <c:Parameters>
-<o:Parameter Id="o146">
+<o:Parameter Id="o149">
 <a:ObjectID>FE470676-A786-42AC-92A0-7CA7E8BB1CF3</a:ObjectID>
 <a:Name>idClient</a:Name>
 <a:Code>idClient</a:Code>
@@ -3128,7 +3171,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Parameter.DataType>int</a:Parameter.DataType>
 <a:ParameterType>I</a:ParameterType>
 </o:Parameter>
-<o:Parameter Id="o147">
+<o:Parameter Id="o150">
 <a:ObjectID>0906FC79-C79F-42CB-9EBD-84DBC4874008</a:ObjectID>
 <a:Name>nom</a:Name>
 <a:Code>nom</a:Code>
@@ -3140,7 +3183,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Parameter.DataType>String</a:Parameter.DataType>
 <a:ParameterType>I</a:ParameterType>
 </o:Parameter>
-<o:Parameter Id="o148">
+<o:Parameter Id="o151">
 <a:ObjectID>DEBD0841-89FB-40BD-8017-B732CF495A54</a:ObjectID>
 <a:Name>prenom</a:Name>
 <a:Code>prenom</a:Code>
@@ -3152,7 +3195,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Parameter.DataType>String</a:Parameter.DataType>
 <a:ParameterType>I</a:ParameterType>
 </o:Parameter>
-<o:Parameter Id="o149">
+<o:Parameter Id="o152">
 <a:ObjectID>7C20C7AA-ECC5-4EF6-AA69-C7A38BC54732</a:ObjectID>
 <a:Name>telephone</a:Name>
 <a:Code>telephone</a:Code>
@@ -3164,7 +3207,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Parameter.DataType>String</a:Parameter.DataType>
 <a:ParameterType>I</a:ParameterType>
 </o:Parameter>
-<o:Parameter Id="o150">
+<o:Parameter Id="o153">
 <a:ObjectID>27EC3401-A9B6-453A-AAAE-30D78FEEC32F</a:ObjectID>
 <a:Name>email</a:Name>
 <a:Code>email</a:Code>
@@ -3193,7 +3236,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>Administrateur</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <c:Attributes>
-<o:Attribute Id="o151">
+<o:Attribute Id="o154">
 <a:ObjectID>AC1E72AF-0CF3-458A-B440-E2A0BE01728E</a:ObjectID>
 <a:Name>id</a:Name>
 <a:Code>id</a:Code>
@@ -3204,7 +3247,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:DataType>int</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
-<o:Attribute Id="o152">
+<o:Attribute Id="o155">
 <a:ObjectID>32F2CF0C-1131-4DA8-AE22-1CDFB93BAB32</a:ObjectID>
 <a:Name>lieuSource</a:Name>
 <a:Code>lieuSource</a:Code>
@@ -3215,7 +3258,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:DataType>String</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
-<o:Attribute Id="o153">
+<o:Attribute Id="o156">
 <a:ObjectID>FEDCD899-0023-4641-BA1E-BC29D1B1172A</a:ObjectID>
 <a:Name>tarif</a:Name>
 <a:Code>tarif</a:Code>
@@ -3227,7 +3270,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 <a:Derived>1</a:Derived>
 </o:Attribute>
-<o:Attribute Id="o154">
+<o:Attribute Id="o157">
 <a:ObjectID>26EA6C43-A114-44DC-B797-5E8027914D4B</a:ObjectID>
 <a:Name>lieuDestionation</a:Name>
 <a:Code>lieuDestionation</a:Code>
@@ -3238,7 +3281,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:DataType>String</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
-<o:Attribute Id="o155">
+<o:Attribute Id="o158">
 <a:ObjectID>69246226-479E-4A22-88DF-5190E1832902</a:ObjectID>
 <a:Name>typePaiement</a:Name>
 <a:Code>typePaiement</a:Code>
@@ -3249,7 +3292,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:DataType>String</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
-<o:Attribute Id="o156">
+<o:Attribute Id="o159">
 <a:ObjectID>5E0833DB-B6B4-4093-A058-E7B0D3A99C2C</a:ObjectID>
 <a:Name>date</a:Name>
 <a:Code>date</a:Code>
@@ -3260,7 +3303,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:DataType>Date</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
-<o:Attribute Id="o157">
+<o:Attribute Id="o160">
 <a:ObjectID>DED11B7D-7EA2-4E20-A2C0-7DE3060372F6</a:ObjectID>
 <a:Name>heure</a:Name>
 <a:Code>heure</a:Code>
@@ -3273,7 +3316,7 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Attribute>
 </c:Attributes>
 <c:Operations>
-<o:Operation Id="o158">
+<o:Operation Id="o161">
 <a:ObjectID>F0652372-750E-4437-A72D-FA06789FF0D4</a:ObjectID>
 <a:Name>Reservation</a:Name>
 <a:Code>Reservation</a:Code>
@@ -3285,7 +3328,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Automatic>1</a:Automatic>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <c:Parameters>
-<o:Parameter Id="o159">
+<o:Parameter Id="o162">
 <a:ObjectID>C60C74F6-B7D0-4BC8-9AC8-32F78098DA87</a:ObjectID>
 <a:Name>lieuSource</a:Name>
 <a:Code>lieuSource</a:Code>
@@ -3296,7 +3339,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Parameter.DataType>String</a:Parameter.DataType>
 <a:ParameterType>I</a:ParameterType>
 </o:Parameter>
-<o:Parameter Id="o160">
+<o:Parameter Id="o163">
 <a:ObjectID>261D84B2-712F-40F4-8A3D-77879A90D425</a:ObjectID>
 <a:Name>lieuDestination</a:Name>
 <a:Code>lieuDestination</a:Code>
@@ -3307,7 +3350,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Parameter.DataType>String</a:Parameter.DataType>
 <a:ParameterType>I</a:ParameterType>
 </o:Parameter>
-<o:Parameter Id="o161">
+<o:Parameter Id="o164">
 <a:ObjectID>168E73BA-6590-423F-B10E-6D31FEB0CD57</a:ObjectID>
 <a:Name>tarif</a:Name>
 <a:Code>tarif</a:Code>
@@ -3323,7 +3366,7 @@ LABL 0 Arial,8,N</a:FontList>
 <o:Class Ref="o87"/>
 </c:InfluentObject>
 </o:Operation>
-<o:Operation Id="o162">
+<o:Operation Id="o165">
 <a:ObjectID>5052A5D4-6288-4100-AB48-75D8D11C2609</a:ObjectID>
 <a:Name>getLieuSource</a:Name>
 <a:Code>getLieuSource</a:Code>
@@ -3336,10 +3379,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Automatic>1</a:Automatic>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <c:InfluentObject>
-<o:Attribute Ref="o152"/>
+<o:Attribute Ref="o155"/>
 </c:InfluentObject>
 </o:Operation>
-<o:Operation Id="o163">
+<o:Operation Id="o166">
 <a:ObjectID>4B10EAF0-4943-422A-9010-F59DBF881C87</a:ObjectID>
 <a:Name>setLieuSource</a:Name>
 <a:Code>setLieuSource</a:Code>
@@ -3352,7 +3395,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Automatic>1</a:Automatic>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <c:Parameters>
-<o:Parameter Id="o164">
+<o:Parameter Id="o167">
 <a:ObjectID>4CC78588-07ED-4E04-AA48-8AF51ACB1B8F</a:ObjectID>
 <a:Name>newLieuSource</a:Name>
 <a:Code>newLieuSource</a:Code>
@@ -3365,10 +3408,10 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Parameter>
 </c:Parameters>
 <c:InfluentObject>
-<o:Attribute Ref="o152"/>
+<o:Attribute Ref="o155"/>
 </c:InfluentObject>
 </o:Operation>
-<o:Operation Id="o165">
+<o:Operation Id="o168">
 <a:ObjectID>59ECBAAF-E864-44E3-9897-1095EC368D40</a:ObjectID>
 <a:Name>getTarif</a:Name>
 <a:Code>getTarif</a:Code>
@@ -3381,10 +3424,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Automatic>1</a:Automatic>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <c:InfluentObject>
-<o:Attribute Ref="o153"/>
+<o:Attribute Ref="o156"/>
 </c:InfluentObject>
 </o:Operation>
-<o:Operation Id="o166">
+<o:Operation Id="o169">
 <a:ObjectID>2F896BEF-9339-40F1-A647-944C8FF5B118</a:ObjectID>
 <a:Name>setTarif</a:Name>
 <a:Code>setTarif</a:Code>
@@ -3397,7 +3440,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Automatic>1</a:Automatic>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <c:Parameters>
-<o:Parameter Id="o167">
+<o:Parameter Id="o170">
 <a:ObjectID>A67CDDF8-092D-4FDD-8BEC-1BEF886AE123</a:ObjectID>
 <a:Name>newTarif</a:Name>
 <a:Code>newTarif</a:Code>
@@ -3410,10 +3453,10 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Parameter>
 </c:Parameters>
 <c:InfluentObject>
-<o:Attribute Ref="o153"/>
+<o:Attribute Ref="o156"/>
 </c:InfluentObject>
 </o:Operation>
-<o:Operation Id="o168">
+<o:Operation Id="o171">
 <a:ObjectID>12B75B1C-4D89-4417-85BF-6719F8EE39E0</a:ObjectID>
 <a:Name>getLieuDestionation</a:Name>
 <a:Code>getLieuDestionation</a:Code>
@@ -3426,10 +3469,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Automatic>1</a:Automatic>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <c:InfluentObject>
-<o:Attribute Ref="o154"/>
+<o:Attribute Ref="o157"/>
 </c:InfluentObject>
 </o:Operation>
-<o:Operation Id="o169">
+<o:Operation Id="o172">
 <a:ObjectID>5F43735D-E67E-440B-80BD-4FE34C149FD9</a:ObjectID>
 <a:Name>setLieuDestionation</a:Name>
 <a:Code>setLieuDestionation</a:Code>
@@ -3442,7 +3485,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Automatic>1</a:Automatic>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <c:Parameters>
-<o:Parameter Id="o170">
+<o:Parameter Id="o173">
 <a:ObjectID>1BCB34F1-F1EF-4E69-A5EC-C67F5EBE6259</a:ObjectID>
 <a:Name>newLieuDestionation</a:Name>
 <a:Code>newLieuDestionation</a:Code>
@@ -3455,10 +3498,10 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Parameter>
 </c:Parameters>
 <c:InfluentObject>
-<o:Attribute Ref="o154"/>
+<o:Attribute Ref="o157"/>
 </c:InfluentObject>
 </o:Operation>
-<o:Operation Id="o171">
+<o:Operation Id="o174">
 <a:ObjectID>1D801C72-875A-463F-9696-62A9FBEDCBBB</a:ObjectID>
 <a:Name>getTypePaiement</a:Name>
 <a:Code>getTypePaiement</a:Code>
@@ -3471,10 +3514,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Automatic>1</a:Automatic>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <c:InfluentObject>
-<o:Attribute Ref="o155"/>
+<o:Attribute Ref="o158"/>
 </c:InfluentObject>
 </o:Operation>
-<o:Operation Id="o172">
+<o:Operation Id="o175">
 <a:ObjectID>04E6EECB-7B61-487F-B623-CD00F7B9BCC0</a:ObjectID>
 <a:Name>setTypePaiement</a:Name>
 <a:Code>setTypePaiement</a:Code>
@@ -3487,7 +3530,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Automatic>1</a:Automatic>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <c:Parameters>
-<o:Parameter Id="o173">
+<o:Parameter Id="o176">
 <a:ObjectID>04803690-0224-417D-9CD7-93AAC0FE4F73</a:ObjectID>
 <a:Name>newTypePaiement</a:Name>
 <a:Code>newTypePaiement</a:Code>
@@ -3500,7 +3543,7 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Parameter>
 </c:Parameters>
 <c:InfluentObject>
-<o:Attribute Ref="o155"/>
+<o:Attribute Ref="o158"/>
 </c:InfluentObject>
 </o:Operation>
 </c:Operations>
@@ -3515,7 +3558,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>Administrateur</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <c:Operations>
-<o:Operation Id="o174">
+<o:Operation Id="o177">
 <a:ObjectID>63BC5440-D903-4B77-A710-525BF29F8907</a:ObjectID>
 <a:Name>getReservationOfASpecificClient</a:Name>
 <a:Code>getReservationOfASpecificClient</a:Code>
@@ -3529,10 +3572,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <a:WSDLDataType>void</a:WSDLDataType>
 <c:InfluentObject>
-<o:Operation Ref="o175"/>
+<o:Operation Ref="o178"/>
 </c:InfluentObject>
 </o:Operation>
-<o:Operation Id="o176">
+<o:Operation Id="o179">
 <a:ObjectID>C307DE17-1DE2-469C-8DBC-1816885A4987</a:ObjectID>
 <a:Name>getAllReservations</a:Name>
 <a:Code>getAllReservations</a:Code>
@@ -3546,7 +3589,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <a:WSDLDataType>void</a:WSDLDataType>
 <c:InfluentObject>
-<o:Operation Ref="o177"/>
+<o:Operation Ref="o180"/>
 </c:InfluentObject>
 </o:Operation>
 </c:Operations>
@@ -3561,7 +3604,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>Administrateur</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <c:Attributes>
-<o:Attribute Id="o178">
+<o:Attribute Id="o181">
 <a:ObjectID>680D2006-E958-4F87-B55F-06D5A728B333</a:ObjectID>
 <a:Name>modele</a:Name>
 <a:Code>modele</a:Code>
@@ -3572,7 +3615,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:DataType>String</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
-<o:Attribute Id="o179">
+<o:Attribute Id="o182">
 <a:ObjectID>55F9BE99-B9B6-47A8-8088-E63586A4E713</a:ObjectID>
 <a:Name>matricule</a:Name>
 <a:Code>matricule</a:Code>
@@ -3583,7 +3626,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:DataType>String</a:DataType>
 <a:Attribute.Visibility>-</a:Attribute.Visibility>
 </o:Attribute>
-<o:Attribute Id="o180">
+<o:Attribute Id="o183">
 <a:ObjectID>521484D3-580F-4CF7-A6B2-B262606732B4</a:ObjectID>
 <a:Name>status</a:Name>
 <a:Code>status</a:Code>
@@ -3596,7 +3639,7 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Attribute>
 </c:Attributes>
 <c:Operations>
-<o:Operation Id="o181">
+<o:Operation Id="o184">
 <a:ObjectID>6F84F9CB-8A6D-4279-8424-E54497EBBF50</a:ObjectID>
 <a:Name>Taxi</a:Name>
 <a:Code>Taxi</a:Code>
@@ -3608,7 +3651,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Automatic>1</a:Automatic>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <c:Parameters>
-<o:Parameter Id="o182">
+<o:Parameter Id="o185">
 <a:ObjectID>D5E8E728-64EA-4BC6-A799-7D9063F1F3FE</a:ObjectID>
 <a:Name>nom</a:Name>
 <a:Code>nom</a:Code>
@@ -3619,7 +3662,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Parameter.DataType>String</a:Parameter.DataType>
 <a:ParameterType>I</a:ParameterType>
 </o:Parameter>
-<o:Parameter Id="o183">
+<o:Parameter Id="o186">
 <a:ObjectID>06FA9C5F-27DA-423F-B472-1BDEFE3EFFCB</a:ObjectID>
 <a:Name>modele</a:Name>
 <a:Code>modele</a:Code>
@@ -3630,7 +3673,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Parameter.DataType>String</a:Parameter.DataType>
 <a:ParameterType>I</a:ParameterType>
 </o:Parameter>
-<o:Parameter Id="o184">
+<o:Parameter Id="o187">
 <a:ObjectID>850B6869-BBD2-4FE8-9D2E-03391C19325A</a:ObjectID>
 <a:Name>matricule</a:Name>
 <a:Code>matricule</a:Code>
@@ -3646,7 +3689,7 @@ LABL 0 Arial,8,N</a:FontList>
 <o:Class Ref="o90"/>
 </c:InfluentObject>
 </o:Operation>
-<o:Operation Id="o185">
+<o:Operation Id="o188">
 <a:ObjectID>4FBACB5C-710F-4672-B5AC-31D3057D712B</a:ObjectID>
 <a:Name>getModele</a:Name>
 <a:Code>getModele</a:Code>
@@ -3659,10 +3702,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Automatic>1</a:Automatic>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <c:InfluentObject>
-<o:Attribute Ref="o178"/>
+<o:Attribute Ref="o181"/>
 </c:InfluentObject>
 </o:Operation>
-<o:Operation Id="o186">
+<o:Operation Id="o189">
 <a:ObjectID>EA1D6A9C-6B41-4B7B-B163-F6CA7D6E24E9</a:ObjectID>
 <a:Name>setModele</a:Name>
 <a:Code>setModele</a:Code>
@@ -3675,7 +3718,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Automatic>1</a:Automatic>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <c:Parameters>
-<o:Parameter Id="o187">
+<o:Parameter Id="o190">
 <a:ObjectID>E188FFC8-CE2A-46A3-AA56-1B877F35773F</a:ObjectID>
 <a:Name>newModele</a:Name>
 <a:Code>newModele</a:Code>
@@ -3688,10 +3731,10 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Parameter>
 </c:Parameters>
 <c:InfluentObject>
-<o:Attribute Ref="o178"/>
+<o:Attribute Ref="o181"/>
 </c:InfluentObject>
 </o:Operation>
-<o:Operation Id="o188">
+<o:Operation Id="o191">
 <a:ObjectID>ABA72882-92D0-4D05-ABC2-38AD0E8B844D</a:ObjectID>
 <a:Name>getMatricule</a:Name>
 <a:Code>getMatricule</a:Code>
@@ -3704,10 +3747,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Automatic>1</a:Automatic>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <c:InfluentObject>
-<o:Attribute Ref="o179"/>
+<o:Attribute Ref="o182"/>
 </c:InfluentObject>
 </o:Operation>
-<o:Operation Id="o189">
+<o:Operation Id="o192">
 <a:ObjectID>78DF2DDC-A34D-49F7-9E2A-D8FE9F97CCBF</a:ObjectID>
 <a:Name>setMatricule</a:Name>
 <a:Code>setMatricule</a:Code>
@@ -3720,7 +3763,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Automatic>1</a:Automatic>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <c:Parameters>
-<o:Parameter Id="o190">
+<o:Parameter Id="o193">
 <a:ObjectID>F415612C-A0C3-43AA-BDB0-1BA2D7BCCB36</a:ObjectID>
 <a:Name>newMatricule</a:Name>
 <a:Code>newMatricule</a:Code>
@@ -3733,10 +3776,10 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Parameter>
 </c:Parameters>
 <c:InfluentObject>
-<o:Attribute Ref="o179"/>
+<o:Attribute Ref="o182"/>
 </c:InfluentObject>
 </o:Operation>
-<o:Operation Id="o191">
+<o:Operation Id="o194">
 <a:ObjectID>60017129-1EE9-47F2-931A-CDEBE6F74EFF</a:ObjectID>
 <a:Name>getStatus</a:Name>
 <a:Code>getStatus</a:Code>
@@ -3749,10 +3792,10 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Automatic>1</a:Automatic>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <c:InfluentObject>
-<o:Attribute Ref="o180"/>
+<o:Attribute Ref="o183"/>
 </c:InfluentObject>
 </o:Operation>
-<o:Operation Id="o192">
+<o:Operation Id="o195">
 <a:ObjectID>A5A96D24-A03F-4F22-881E-3713A0A505FB</a:ObjectID>
 <a:Name>setStatus</a:Name>
 <a:Code>setStatus</a:Code>
@@ -3765,7 +3808,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Automatic>1</a:Automatic>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <c:Parameters>
-<o:Parameter Id="o193">
+<o:Parameter Id="o196">
 <a:ObjectID>23C8FB77-7F8E-4BCE-BF24-E1974B4B4387</a:ObjectID>
 <a:Name>newStatus</a:Name>
 <a:Code>newStatus</a:Code>
@@ -3778,7 +3821,7 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Parameter>
 </c:Parameters>
 <c:InfluentObject>
-<o:Attribute Ref="o180"/>
+<o:Attribute Ref="o183"/>
 </c:InfluentObject>
 </o:Operation>
 </c:Operations>
@@ -3793,7 +3836,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>Administrateur</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <c:Operations>
-<o:Operation Id="o194">
+<o:Operation Id="o197">
 <a:ObjectID>E34708BF-705B-4524-ACD0-F35AC84F887C</a:ObjectID>
 <a:Name>getAllTaxis</a:Name>
 <a:Code>getAllTaxis</a:Code>
@@ -3807,7 +3850,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <a:WSDLDataType>xsd:int</a:WSDLDataType>
 <c:InfluentObject>
-<o:Operation Ref="o195"/>
+<o:Operation Ref="o198"/>
 </c:InfluentObject>
 </o:Operation>
 </c:Operations>
@@ -3822,7 +3865,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Modifier>Administrateur</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <c:Operations>
-<o:Operation Id="o196">
+<o:Operation Id="o199">
 <a:ObjectID>5803F882-5BDB-4608-B435-1CF7DCB5E0F8</a:ObjectID>
 <a:Name>reserver</a:Name>
 <a:Code>reserver</a:Code>
@@ -3833,7 +3876,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:ReturnType>void</a:ReturnType>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 <c:Parameters>
-<o:Parameter Id="o197">
+<o:Parameter Id="o200">
 <a:ObjectID>70A8EF0B-FF34-4868-A671-1EA81A094CE9</a:ObjectID>
 <a:Name>r</a:Name>
 <a:Code>r</a:Code>
@@ -3849,7 +3892,7 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Parameter>
 </c:Parameters>
 </o:Operation>
-<o:Operation Id="o198">
+<o:Operation Id="o201">
 <a:ObjectID>8BC1F56A-9E8E-4209-BEDE-0B954B162EB7</a:ObjectID>
 <a:Name>calculerTarif</a:Name>
 <a:Code>calculerTarif</a:Code>
@@ -3860,7 +3903,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:ReturnType>double</a:ReturnType>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 </o:Operation>
-<o:Operation Id="o199">
+<o:Operation Id="o202">
 <a:ObjectID>888A7FC5-98F8-45E5-9436-0F0E71D5A72E</a:ObjectID>
 <a:Name>suivreTrajet</a:Name>
 <a:Code>suivreTrajet</a:Code>
@@ -3886,7 +3929,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <a:Classifier.Abstract>1</a:Classifier.Abstract>
 <c:Operations>
-<o:Operation Id="o127">
+<o:Operation Id="o130">
 <a:ObjectID>0AA351BB-E37A-4759-A9D4-BA3B5621591B</a:ObjectID>
 <a:Name>register</a:Name>
 <a:Code>register</a:Code>
@@ -3897,7 +3940,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:ReturnType>void</a:ReturnType>
 <a:Operation.Abstract>1</a:Operation.Abstract>
 <c:Parameters>
-<o:Parameter Id="o200">
+<o:Parameter Id="o203">
 <a:ObjectID>6E18F80D-2A2B-4A13-AE57-548F54E69438</a:ObjectID>
 <a:Name>p</a:Name>
 <a:Code>p</a:Code>
@@ -3913,7 +3956,7 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Parameter>
 </c:Parameters>
 </o:Operation>
-<o:Operation Id="o131">
+<o:Operation Id="o134">
 <a:ObjectID>F2FCA4A9-BFFC-4569-9231-E1D724B41C4B</a:ObjectID>
 <a:Name>login</a:Name>
 <a:Code>login</a:Code>
@@ -3924,7 +3967,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:ReturnType>void</a:ReturnType>
 <a:Operation.Abstract>1</a:Operation.Abstract>
 <c:Parameters>
-<o:Parameter Id="o201">
+<o:Parameter Id="o204">
 <a:ObjectID>D2CAA8EB-6824-443B-8FBC-7C6839F04AFF</a:ObjectID>
 <a:Name>email</a:Name>
 <a:Code>email</a:Code>
@@ -3935,7 +3978,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Parameter.DataType>String</a:Parameter.DataType>
 <a:ParameterType>I</a:ParameterType>
 </o:Parameter>
-<o:Parameter Id="o202">
+<o:Parameter Id="o205">
 <a:ObjectID>3B38F000-38A2-4B60-91F6-D1D1666F67FC</a:ObjectID>
 <a:Name>password</a:Name>
 <a:Code>password</a:Code>
@@ -3948,7 +3991,7 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Parameter>
 </c:Parameters>
 </o:Operation>
-<o:Operation Id="o122">
+<o:Operation Id="o125">
 <a:ObjectID>9159AD91-7353-41AB-8B07-1D0C048D6041</a:ObjectID>
 <a:Name>consulterHistoriqueReservation</a:Name>
 <a:Code>consulterHistoriqueReservation</a:Code>
@@ -3959,7 +4002,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:ReturnType>void</a:ReturnType>
 <a:Operation.Abstract>1</a:Operation.Abstract>
 </o:Operation>
-<o:Operation Id="o124">
+<o:Operation Id="o127">
 <a:ObjectID>C560D8AA-A706-43E6-8FD0-8F7515B7847E</a:ObjectID>
 <a:Name>updateInfo</a:Name>
 <a:Code>updateInfo</a:Code>
@@ -3994,7 +4037,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <a:Classifier.Abstract>1</a:Classifier.Abstract>
 <c:Operations>
-<o:Operation Id="o117">
+<o:Operation Id="o120">
 <a:ObjectID>5549E213-7A5F-4FD8-9CB5-746E877F5D7F</a:ObjectID>
 <a:Name>gererProfil</a:Name>
 <a:Code>gererProfil</a:Code>
@@ -4005,7 +4048,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:ReturnType>void</a:ReturnType>
 <a:Operation.Abstract>1</a:Operation.Abstract>
 </o:Operation>
-<o:Operation Id="o120">
+<o:Operation Id="o123">
 <a:ObjectID>3BA30335-5517-45FF-8927-5D14F2238B42</a:ObjectID>
 <a:Name>donnerAvis</a:Name>
 <a:Code>donnerAvis</a:Code>
@@ -4016,7 +4059,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:ReturnType>void</a:ReturnType>
 <a:Operation.Abstract>1</a:Operation.Abstract>
 <c:Parameters>
-<o:Parameter Id="o203">
+<o:Parameter Id="o206">
 <a:ObjectID>1650EE68-FC48-4337-8043-E01CE88C7686</a:ObjectID>
 <a:Name>t</a:Name>
 <a:Code>t</a:Code>
@@ -4045,7 +4088,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <a:Classifier.Abstract>1</a:Classifier.Abstract>
 <c:Operations>
-<o:Operation Id="o177">
+<o:Operation Id="o180">
 <a:ObjectID>9CC99F66-F5F3-42AB-A2AA-6D4131646732</a:ObjectID>
 <a:Name>getAllReservations</a:Name>
 <a:Code>getAllReservations</a:Code>
@@ -4057,7 +4100,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:Operation.Abstract>1</a:Operation.Abstract>
 <a:TemplateBody>%DefaultBody%</a:TemplateBody>
 </o:Operation>
-<o:Operation Id="o175">
+<o:Operation Id="o178">
 <a:ObjectID>FF023006-3C80-4F2B-80C8-843DAD63CAC4</a:ObjectID>
 <a:Name>getReservationOfASpecificClient</a:Name>
 <a:Code>getReservationOfASpecificClient</a:Code>
@@ -4082,7 +4125,7 @@ LABL 0 Arial,8,N</a:FontList>
 <a:UseParentNamespace>0</a:UseParentNamespace>
 <a:Classifier.Abstract>1</a:Classifier.Abstract>
 <c:Operations>
-<o:Operation Id="o195">
+<o:Operation Id="o198">
 <a:ObjectID>76E35C20-5E6A-4897-BD75-139E73D201D8</a:ObjectID>
 <a:Name>getAllTaxis</a:Name>
 <a:Code>getAllTaxis</a:Code>
@@ -4493,7 +4536,7 @@ LABL 0 Arial,8,N</a:FontList>
 </o:Dependency>
 </c:Dependencies>
 <c:TargetModels>
-<o:TargetModel Id="o204">
+<o:TargetModel Id="o207">
 <a:ObjectID>3BD5604F-E077-414E-99FA-0791683F5721</a:ObjectID>
 <a:Name>Java</a:Name>
 <a:Code>Java</a:Code>
@@ -4508,7 +4551,7 @@ LABL 0 Arial,8,N</a:FontList>
 <o:Shortcut Ref="o3"/>
 </c:SessionShortcuts>
 </o:TargetModel>
-<o:TargetModel Id="o205">
+<o:TargetModel Id="o208">
 <a:ObjectID>6A06FEA7-2BA1-4EFC-A3A7-A1182D88EFFB</a:ObjectID>
 <a:Name>WSDL for Java</a:Name>
 <a:Code>WSDLJava</a:Code>

@@ -25,12 +25,17 @@ public class IClientDAOImplement implements IClientDAO{
         }
     }
     public void isValidPassword(String password) {
-        if (password.length()< 12 && passwordContainsLowerLetters(password) > 0 && passwordContainsUpperLetters(password) > 0) {
-            System.out.println("Valid password");
+        String regexExpression = "((?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{1,15})";
+        Pattern pattern = Pattern.compile(regexExpression);
+        Matcher matcher = pattern.matcher(password);
+        boolean m = matcher.find();
+        if(m == true) {
+            System.out.println("Valid Password");
         }
         else {
-            System.out.println("Invalid password");
+            System.out.println("Invalid Password");
         }
+
     }
     public int passwordContainsUpperLetters(String password) {
         int upperCount = 0;
@@ -51,5 +56,16 @@ public class IClientDAOImplement implements IClientDAO{
             }
         }
         return lowerCount;
+    }
+    public int passwordContainsDigits(String password){
+            int digitCount = 0;
+            for (int i = 0; i < password.length(); i++){
+                /* In general, we used “.*\\d.*” as regex to denote that the string contains at least one digit.
+                 Alternatively, we can replace “\\d” with “[0-9]” as they describe the same thing (digit/number).*/
+                if(password.matches(".*\\d.*")) {
+                    digitCount++;
+                }
+            }
+        return digitCount;
     }
 }
