@@ -7,7 +7,7 @@ public interface IPersonneDAO {
     public boolean isValidPassword(String password);
     public boolean isExistEmail(String email);
 
-    //public void login(String email, String password);
+    public void login(String email, String password);
    //public void consulterHistoriqueReservation();
     //public void updateInfo();
 }
