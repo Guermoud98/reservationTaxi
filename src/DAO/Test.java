@@ -9,6 +9,8 @@ public class Test {
         Conducteur c1 = new Conducteur("meriem","aitAli","0656787656","meriem.ait@gmail.com", "Merry@1");
         Conducteur c2 = new Conducteur("asma", "hana", "9876","asma.g@gmail.com", "1@Hn");
         IClientDAO i = new IClientDAOImplement();
+        ITaxiDAO taxi = new ITaxiDAOImplementation();
+        taxi.getAllTaxis();
         //i.register(c2);
         //i.login("neha.et@gmail.com", "Neh2003@");
         //i.updateInfo("nehaa",null,"03435");
@@ -19,7 +21,8 @@ public class Test {
         //System.out.println(c3);
         //i.logout();
         //System.out.println("hello");
-        i.updatePrenom(c2,  "Emily");
+        //i.updateTelephone(c2,  "0753684");
+
 
     }
 }
