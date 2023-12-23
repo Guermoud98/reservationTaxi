@@ -6,12 +6,14 @@ import java.sql.*;
 public class Test {
     public static void main (String [] args){
         Connection conn = ConnectionDB.getConnexion();
-        Conducteur c1 = new Conducteur("meriem","aitAli","0656787656","meriem.ait@gmail.com", "Merry@1");
-        Conducteur c2 = new Conducteur("asma", "hana", "9876","asma.g@gmail.com", "1@Hn");
-        IClientDAO i = new IClientDAOImplement();
-        ITaxiDAO taxi = new ITaxiDAOImplementation();
-        IReservationDAO res = new IReservationDAOImplement();
-        res.getAllReservations();
+        Conducteur cond = new Conducteur("Jack", "Ferri", "0657847390", "jacki.f@gmail.com", "Ja@18");
+        IConducteurDAO c = new IConducteurDAOimplement();
+        c.register(cond);
+
+        //IClientDAO i = new IClientDAOImplement();
+        //ITaxiDAO taxi = new ITaxiDAOImplementation();
+        //IReservationDAO res = new IReservationDAOImplement();
+        //res.getAllReservations();
         //taxi.getAllTaxis();
         //System.out.println(i.getIdFromDB(c1));
 
