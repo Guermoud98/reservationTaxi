@@ -9,7 +9,8 @@ public interface IPersonneDAO {
 
     public void login(String email, String password);
    //public void consulterHistoriqueReservation();
-    public void updateInfo(Personne p, String nom);
+    public void updateNom(Personne p, String nom);
+    public void updatePrenom(Personne p, String email);
 
 
     public void logout();

@@ -19,6 +19,7 @@ public class Test {
         //System.out.println(c3);
         //i.logout();
         //System.out.println("hello");
-        i.updateInfo(c2,  "asmaa");
+        i.updatePrenom(c2,  "Emily");
+
     }
 }

@@ -93,7 +93,7 @@ public class IClientDAOImplement implements IClientDAO {
             System.out.println("you are not connected");
         }
     }
-    public void updateInfo(Personne p, String nom) {
+    public void updateNom(Personne p, String nom) {
         if (conn != null && isExistEmail(p.getEmail())) {
             try {
                 stmt = conn.prepareStatement("UPDATE client SET nom = ? WHERE email = ?");
@@ -111,6 +111,24 @@ public class IClientDAOImplement implements IClientDAO {
         }
 
     }
+    public void updatePrenom(Personne p, String prenom) {
+        if (conn != null && isExistEmail(p.getEmail())) {
+            try {
+                stmt = conn.prepareStatement("UPDATE client SET nom = ? WHERE email = ?");
+                stmt.setString(1, prenom);
+                stmt.setString(2, p.getEmail());
+                stmt.executeUpdate();
+                System.out.println("prenom updated");
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        else {
+            System.out.println("user not connected");
+        }
+    }
+
     public void logout() {
         System.exit(0);
         conn = null;
