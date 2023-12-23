@@ -15,7 +15,6 @@ public class IClientDAOImplement implements IClientDAO {
     private ResultSet rs = null;
 
     public void register(Personne p) {
-
         try {
             //isValidEmail(p.getEmail());  On fait appel à la fonction isValidEmail pour verifier la validité de l'email
             if (isValidEmail(p.getEmail()) && isValidPassword(p.getPassword()) && !isExistEmail(p.getEmail())) {
@@ -94,8 +93,27 @@ public class IClientDAOImplement implements IClientDAO {
             System.out.println("you are not connected");
         }
     }
+    public void updateInfo(Personne p, String nom) {
+        if (conn != null && isExistEmail(p.getEmail())) {
+            try {
+                stmt = conn.prepareStatement("UPDATE client SET nom = ? WHERE email = ?");
+                stmt.setString(1, nom);
+                stmt.setString(2, p.getEmail());
+                stmt.executeUpdate();
+                System.out.println("nom updated");
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        else {
+            System.out.println("user not connected");
+        }
+
+    }
     public void logout() {
         System.exit(0);
+        conn = null;
     }
 }
 
