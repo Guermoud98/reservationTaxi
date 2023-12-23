@@ -6,7 +6,8 @@ import java.sql.*;
 public class Test {
     public static void main (String [] args){
         Connection conn = ConnectionDB.getConnexion();
-        Conducteur cond = new Conducteur("Jack", "Ferri", "0657847390", "jacki.f@gmail.com", "Ja@18");
+        Conducteur cond = new Conducteur("sophia", "tanmer", "0946579232", "sophia.ta@gmail.com", "Ta2@s");
+
         IConducteurDAO c = new IConducteurDAOimplement();
         c.register(cond);
 

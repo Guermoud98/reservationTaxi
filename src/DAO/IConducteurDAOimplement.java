@@ -13,6 +13,7 @@ public class IConducteurDAOimplement implements IConducteurDAO {
     Connection conn = ConnectionDB.getConnexion();
     PreparedStatement stmt = null;
     PreparedStatement stmt2 = null;
+    PreparedStatement stmt3 = null;
     ResultSet rs = null;
     public void register(Personne p) {
         try {
@@ -28,6 +29,8 @@ public class IConducteurDAOimplement implements IConducteurDAO {
                 stmt.setString(6, selectRandomMatricule() );
                 stmt.executeUpdate();
                 System.out.println("Inserted!");
+                // On doit mettre a jour le status du taxi car il n'est plus dispo
+                updateTaxiStatus();
 
 
             } else if (isExistEmail(p.getEmail())) {
@@ -96,6 +99,7 @@ public class IConducteurDAOimplement implements IConducteurDAO {
             System.out.println("you are not connected");
         }
     }
+    //On attribue au conducteur inscrit le matricule d'un taxi aleatoirement
     public String selectRandomMatricule() {
         String matricule = "";
         try {
@@ -105,11 +109,28 @@ public class IConducteurDAOimplement implements IConducteurDAO {
             while(rs.next()) {
                 matricule = rs.getString("matricule");
             }
+            //updateTaxiStatus();
 
 
         } catch (Exception e) {
             e.printStackTrace();
         }
         return matricule;
+    }
+    // La methode qui met à jour le statut du taxi apres avoir ete affecte a un conducteur
+    public void updateTaxiStatus() {
+        String mat = selectRandomMatricule();
+        try {
+            if (!mat.equals("")) {
+                stmt3 = conn.prepareStatement("UPDATE taxi SET status = ? WHERE matricule = ?");
+                stmt3.setString(1, "Occupe");
+                stmt3.setString(2, mat );
+                stmt3.executeUpdate();
+                System.out.println("done");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
