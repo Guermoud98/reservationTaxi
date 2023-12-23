@@ -11,6 +11,7 @@ public class Test {
         IClientDAO i = new IClientDAOImplement();
         ITaxiDAO taxi = new ITaxiDAOImplementation();
         taxi.getAllTaxis();
+        System.out.println(i.getIdFromDB(c1));
         //i.register(c2);
         //i.login("neha.et@gmail.com", "Neh2003@");
         //i.updateInfo("nehaa",null,"03435");

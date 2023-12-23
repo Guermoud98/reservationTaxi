@@ -145,6 +145,22 @@ public class IClientDAOImplement implements IClientDAO {
             System.out.println("user not connected");
         }
     }
+    public int getIdFromDB(Personne p) {
+        int id = -1;
+        try {
+            stmt = conn.prepareStatement("SELECT idClient FROM client WHERE email = ?");
+            stmt.setString(1, p.getEmail());
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                id = rs.getInt("idClient");
+            }
+            rs.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return id;
+
+    }
 
     public void logout() {
         System.exit(0);
