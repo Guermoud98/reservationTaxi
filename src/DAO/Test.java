@@ -10,8 +10,11 @@ public class Test {
         Conducteur c2 = new Conducteur("asma", "hana", "9876","asma.g@gmail.com", "1@Hn");
         IClientDAO i = new IClientDAOImplement();
         ITaxiDAO taxi = new ITaxiDAOImplementation();
-        taxi.getAllTaxis();
-        System.out.println(i.getIdFromDB(c1));
+        IReservationDAO res = new IReservationDAOImplement();
+        res.getAllReservations();
+        //taxi.getAllTaxis();
+        //System.out.println(i.getIdFromDB(c1));
+
         //i.register(c2);
         //i.login("neha.et@gmail.com", "Neh2003@");
         //i.updateInfo("nehaa",null,"03435");
