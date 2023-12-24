@@ -145,6 +145,7 @@ public class IClientDAOImplement implements IClientDAO {
             System.out.println("user not connected");
         }
     }
+
     public int getIdFromDB(Personne p) {
         int id = -1;
         try {

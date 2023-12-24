@@ -6,10 +6,12 @@ import java.sql.*;
 public class Test {
     public static void main (String [] args){
         Connection conn = ConnectionDB.getConnexion();
-        Conducteur cond = new Conducteur("sophia", "tanmer", "0946579232", "sophia.ta@gmail.com", "Ta2@s");
+        Conducteur cond = new Conducteur("amal", "bent", "3453456", "amal.bn@gmail.com", "Am12#");
 
         IConducteurDAO c = new IConducteurDAOimplement();
-        c.register(cond);
+        //c.register(cond);
+        System.out.println(c.getRandomConducteur());
+        //c.login("jacki.f@gmail.com", "Ja@18");
 
         //IClientDAO i = new IClientDAOImplement();
         //ITaxiDAO taxi = new ITaxiDAOImplementation();

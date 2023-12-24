@@ -1,5 +1,6 @@
 USE reservationTaxi;
-
+SELECT schema_name
+FROM information_schema.schemata;
 -- Client table
 
 CREATE TABLE client (
@@ -26,8 +27,9 @@ CREATE TABLE taxi (
 
 );
 SELECT * FROM taxi;
+DELETE taxi;
 DROP TABLE taxi;
-UPDATE taxi set status = 'Occupe' WHERE matricule= 'ABC123';
+UPDATE taxi set status = 'Occupe' WHERE matricule= 'STU234';
 --Conducteur
 
 CREATE TABLE conducteur (
@@ -41,8 +43,11 @@ CREATE TABLE conducteur (
 
 );
 SELECT * FROM conducteur;
+
 DROP TABLE conducteur;
 ALTER TABLE conducteur ADD password VARCHAR(15);
+
+
 
 --Reservation
 
@@ -60,6 +65,13 @@ CREATE TABLE reservation (
  matricule  VARCHAR(10) FOREIGN KEY REFERENCES taxi(matricule)
 
 );
+-- Modify lieuSource column
+ALTER TABLE reservation
+ALTER COLUMN lieuSource VARCHAR(255);
+
+-- Modify lieuDestination column
+ALTER TABLE reservation
+ALTER COLUMN lieuDestination VARCHAR(255);
 SELECT * FROM reservation;
 DROP TABLE reservation;
 
@@ -79,6 +91,46 @@ INSERT INTO taxi (matricule, modele, status) VALUES ('JKL012', 'Nissan', 'Dispon
 INSERT INTO taxi (matricule, modele, status) VALUES ('MNO345', 'Chevrolet', 'Disponible');
 INSERT INTO taxi (matricule, modele, status) VALUES ('PQR678', 'Volkswagen', 'Disponible');
 INSERT INTO taxi (matricule, modele, status) VALUES ('STU901', 'Hyundai', 'Disponible');
+INSERT INTO taxi (matricule, modele, status) VALUES ('VWX234', 'Mercedes', 'Disponible');
+INSERT INTO taxi (matricule, modele, status) VALUES ('YZB567', 'Subaru', 'Disponible');
+
+INSERT INTO taxi (matricule, modele, status) VALUES ('ABC456', 'Kia', 'Disponible');
+INSERT INTO taxi (matricule, modele, status) VALUES ('DEF789', 'Mazda', 'Disponible');
+INSERT INTO taxi (matricule, modele, status) VALUES ('GHI012', 'Audi', 'Disponible');
+INSERT INTO taxi (matricule, modele, status) VALUES ('JKL345', 'BMW', 'Disponible');
+INSERT INTO taxi (matricule, modele, status) VALUES ('MNO678', 'Lexus', 'Disponible');
+INSERT INTO taxi (matricule, modele, status) VALUES ('PQR901', 'Jeep', 'Disponible');
+INSERT INTO taxi (matricule, modele, status) VALUES ('STU234', 'Chrysler', 'Disponible');
+INSERT INTO taxi (matricule, modele, status) VALUES ('VWX567', 'Buick', 'Disponible');
+INSERT INTO taxi (matricule, modele, status) VALUES ('YZA890', 'Fiat', 'Disponible');
+INSERT INTO taxi (matricule, modele, status) VALUES ('BCD123', 'Tesla', 'Disponible');
+
+INSERT INTO taxi (matricule, modele, status) VALUES ('CDE234', 'Renault', 'Disponible');
+INSERT INTO taxi (matricule, modele, status) VALUES ('EFG567', 'Volvo', 'Disponible');
+INSERT INTO taxi (matricule, modele, status) VALUES ('HIJ890', 'Jaguar', 'Disponible');
+INSERT INTO taxi (matricule, modele, status) VALUES ('KLM123', 'Porsche', 'Disponible');
+INSERT INTO taxi (matricule, modele, status) VALUES ('NOP456', 'Infiniti', 'Disponible');
+INSERT INTO taxi (matricule, modele, status) VALUES ('QRS789', 'Cadillac', 'Disponible');
+INSERT INTO taxi (matricule, modele, status) VALUES ('TUV012', 'Mitsubishi', 'Disponible');
+INSERT INTO taxi (matricule, modele, status) VALUES ('VWX345', 'Suzuki', 'Disponible');
+INSERT INTO taxi (matricule, modele, status) VALUES ('YZA678', 'Acura', 'Disponible');
+INSERT INTO taxi (matricule, modele, status) VALUES ('BCD901', 'Land Rover', 'Disponible');
+
+INSERT INTO taxi (matricule, modele, status) VALUES ('CDE567', 'Alfa Romeo', 'Disponible');
+INSERT INTO taxi (matricule, modele, status) VALUES ('EFG890', 'Chrysler', 'Disponible');
+INSERT INTO taxi (matricule, modele, status) VALUES ('HIJ123', 'Maserati', 'Disponible');
+INSERT INTO taxi (matricule, modele, status) VALUES ('KLM456', 'Smart', 'Disponible');
+INSERT INTO taxi (matricule, modele, status) VALUES ('NOP789', 'Mini', 'Disponible');
+INSERT INTO taxi (matricule, modele, status) VALUES ('QRS012', 'Hummer', 'Disponible');
+INSERT INTO taxi (matricule, modele, status) VALUES ('TUV345', 'Lincoln', 'Disponible');
+INSERT INTO taxi (matricule, modele, status) VALUES ('VWX678', 'Ferrari', 'Disponible');
+INSERT INTO taxi (matricule, modele, status) VALUES ('YZA901', 'Bentley', 'Disponible');
+INSERT INTO taxi (matricule, modele, status) VALUES ('BCD234', 'Rolls-Royce', 'Disponible');
+
+
+
+
+
 
 
 

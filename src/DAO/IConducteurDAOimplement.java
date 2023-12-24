@@ -1,6 +1,7 @@
 package DAO;
 
 import Business.Personne;
+import Business.Taxi;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,7 +31,6 @@ public class IConducteurDAOimplement implements IConducteurDAO {
                 stmt.executeUpdate();
                 System.out.println("Inserted!");
                 // On doit mettre a jour le status du taxi car il n'est plus dispo
-                updateTaxiStatus();
 
 
             } else if (isExistEmail(p.getEmail())) {
@@ -83,13 +83,12 @@ public class IConducteurDAOimplement implements IConducteurDAO {
     public void login(String email, String password) {
         if (conn != null) {
             try {
-                stmt = conn.prepareStatement("SELECT idConducteur, nom FROM conducteur WHERE email = ?");
+                stmt = conn.prepareStatement("SELECT idConducteur, nom, password FROM conducteur WHERE email = ?");
                 stmt.setString(1, email);
                 rs = stmt.executeQuery();
                 while (rs.next()) {
-                    if (rs.getString("password").equals(password)) {
-                        System.out.println("Welcome " + rs.getString("nom"));
-                    }
+                        System.out.println("Welcome " + rs.getString("nom")
+                        + ", ur password : " + rs.getString("password"));
                 }
 
             } catch (SQLException e) {
@@ -117,8 +116,25 @@ public class IConducteurDAOimplement implements IConducteurDAO {
         }
         return matricule;
     }
+    public int getIdFromDB(Personne p) {
+        int id = -1;
+        try {
+            stmt = conn.prepareStatement("SELECT idConducteur FROM conducteur WHERE email = ?");
+            stmt.setString(1, p.getEmail());
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                id = rs.getInt("idConducteur");
+            }
+            rs.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return id;
+
+    }
+
     // La methode qui met à jour le statut du taxi apres avoir ete affecte a un conducteur
-    public void updateTaxiStatus() {
+    /*public void updateTaxiStatus() {
         String mat = selectRandomMatricule();
         try {
             if (!mat.equals("")) {
@@ -126,11 +142,50 @@ public class IConducteurDAOimplement implements IConducteurDAO {
                 stmt3.setString(1, "Occupe");
                 stmt3.setString(2, mat );
                 stmt3.executeUpdate();
+                conn.commit();
                 System.out.println("done");
             }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    */
+
+    public void conducteurOfATaxi(String matriule) {
+        try {
+
+            stmt = conn.prepareStatement("SELECT * FROM conducteur WHERE matricule= ?");
+            stmt.setString(1, matriule);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                System.out.println("[idConducteur: " + rs.getString("idConducteur")
+                        + ", nom: " + rs.getString("nom") + ", prenom: " + rs.getString("prenom")
+                        + ", telephone: " + rs.getString("telephone") + ", email: " + rs.getString("email")
+                        + " ]");
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+    public int getRandomConducteur() {
+        int idCond = 0;
+        try {
+            stmt2 = conn.prepareStatement("SELECT TOP 1 idConducteur, nom FROM conducteur  ORDER BY NEWID()");
+            rs = stmt2.executeQuery();
+            while(rs.next()) {
+                 idCond = rs.getInt("idConducteur");
+                System.out.println("nom: " + rs.getString("nom"));
+            }
+            //updateTaxiStatus();
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return idCond;
     }
 }

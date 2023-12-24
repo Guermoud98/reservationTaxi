@@ -11,4 +11,11 @@ public class Conducteur extends Personne{
 
         return super.getId();
     }
+    public Taxi getTaxi() {
+        return taxi;
+    }
+
+    public void setTaxi(Taxi taxi) {
+        this.taxi = taxi;
+    }
 }

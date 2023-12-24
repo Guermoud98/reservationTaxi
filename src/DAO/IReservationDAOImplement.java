@@ -1,5 +1,7 @@
 package DAO;
 
+import Business.Reservation;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -27,5 +29,27 @@ public class IReservationDAOImplement implements IReservationDAO{
             e.printStackTrace();
         }
 
+    }
+    public void insertReservation(Reservation r) {
+        IPersonneDAO i = new IClientDAOImplement();
+        int idClient = i.getIdFromDB(r.getClient()); // l'argument est un client
+        try {
+            stmt = conn.prepareStatement("INSERT INTO reservation(lieuSource, lieuDestination, typePaiement" +
+                    " tarif, date, heure, idClient, idConducteur, matricule) VALUES (?,?,?,?,?,?,?,?,?");
+            stmt.setString(1, r.getLieuSource());
+            stmt.setString(2, r.getLieuDestination());
+            stmt.setString(3, r.getTypePaiement());
+            stmt.setFloat(4, r.getTarif());
+            stmt.setDate(5, r.getD());
+            stmt.setTime(6, r.getHeure());
+            stmt.setInt(7, idClient);
+
+
+
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

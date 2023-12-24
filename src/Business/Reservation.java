@@ -8,11 +8,14 @@ public class Reservation {
     private Conducteur conducteur;
     private String lieuSource;
     private String lieuDestination;
-    private double tarif;
+
+    private String typePaiement;
+    private float tarif;
+
     private Date d;
     private Time heure;
 
-    public Reservation(String lieuSource, String lieuDestination, double tarif, Date d, Time heure) {
+    public Reservation(String lieuSource, String lieuDestination, float tarif, Date d, Time heure) {
         this.lieuSource = lieuSource;
         this.lieuDestination = lieuDestination;
         this.tarif = tarif;
@@ -36,7 +39,7 @@ public class Reservation {
         this.lieuDestination = lieuDestination;
     }
 
-    public double getTarif() {
+    public float getTarif() {
         return tarif;
     }
 
@@ -56,12 +59,12 @@ public class Reservation {
         this.conducteur = conducteur;
     }
 
-    public void setTarif(double tarif) {
+    public void setTarif(float tarif) {
         this.tarif = tarif;
     }
 
-    public Date getD() {
-        return d;
+    public java.sql.Date getD() {
+        return (java.sql.Date) d;
     }
 
     public void setD(Date d) {
@@ -74,5 +77,26 @@ public class Reservation {
 
     public void setHeure(Time heure) {
         this.heure = heure;
+    }
+    public String getTypePaiement() {
+        return typePaiement;
+    }
+
+    public void setTypePaiement(String typePaiement) {
+        this.typePaiement = typePaiement;
+    }
+
+    @Override
+    public String toString() {
+        return "Reservation{" +
+                "client=" + client +
+                ", conducteur=" + conducteur +
+                ", lieuSource='" + lieuSource + '\'' +
+                ", lieuDestination='" + lieuDestination + '\'' +
+                ", typePaiement='" + typePaiement + '\'' +
+                ", tarif=" + tarif +
+                ", d=" + d +
+                ", heure=" + heure +
+                '}';
     }
 }
