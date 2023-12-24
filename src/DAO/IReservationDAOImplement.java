@@ -35,7 +35,7 @@ public class IReservationDAOImplement implements IReservationDAO{
         IPersonneDAO i = new IClientDAOImplement();
         int idClient = i.getIdFromDB(r.getClient()); // l'argument est un client
         IConducteurDAO i1 = new IConducteurDAOimplement();
-        List<Object> l = i1.getRandomConducteur(); // retourne une listequi contient id d'un conducteur affecté à une reservation + matricule
+        List<Object> l = i1.getRandomConducteur(); // retourne une listequi contient l'id d'un conducteur affecté à une reservation + le matricule du taxi
 
         try {
             stmt = conn.prepareStatement("INSERT INTO reservation(lieuSource, lieuDestination, typePaiement, tarif, date, heure, idClient, idConducteur, matricule) VALUES (?,?,?,?,?,?,?,?,?)");
@@ -48,8 +48,9 @@ public class IReservationDAOImplement implements IReservationDAO{
             stmt.setInt(7, idClient);
             stmt.setInt(8, (Integer) l.get(0)); //the cast is mandatory because the list contains objects
             stmt.setString(9, (String) l.get(1));
+            i1.updateTaxiStatus((String) l.get(1)); //pour faire un mise a jour du status du taxi choisi pour cette reservation
             stmt.executeUpdate();
-            System.out.println("inserted");
+            System.out.println("inserted reservation");
 
         } catch (Exception e) {
             e.printStackTrace();

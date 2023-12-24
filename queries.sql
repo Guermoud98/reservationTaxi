@@ -29,7 +29,7 @@ CREATE TABLE taxi (
 SELECT * FROM taxi;
 DELETE taxi;
 DROP TABLE taxi;
-UPDATE taxi set status = 'Occupe' WHERE matricule= 'STU234';
+UPDATE taxi set status = 'Occupe' WHERE matricule= 'JKL012';
 --Conducteur
 
 CREATE TABLE conducteur (

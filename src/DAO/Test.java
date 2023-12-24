@@ -13,10 +13,10 @@ public class Test {
         Connection conn = ConnectionDB.getConnexion();
         IReservationDAO res = new IReservationDAOImplement();
         Conducteur cond = new Conducteur("amal", "bent", "3453456", "amal.bn@gmail.com", "Am12#");
-        Client cl = new Client("hanan", "fra", "06789", "hanane.ad@gmail.com", "Hann@12");
+        Client cl = new Client("meriem", "aitAli", "0656787656", "meriem.ait@gmail.com", "Merry@1");
         IConducteurDAO c = new IConducteurDAOimplement();
         //c.register(cond);
-        Reservation r = new Reservation("Mhamid 10", "Bab Doukala","Espece" ,40.0f, date, time, cl);
+        Reservation r = new Reservation("Bab Doukala", "Gueliz","Espece" ,25.0f, date, time, cl);
         res.insertReservation(r);
         //c.login("jacki.f@gmail.com", "Ja@18");
 

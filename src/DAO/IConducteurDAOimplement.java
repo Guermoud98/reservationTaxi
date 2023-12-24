@@ -135,24 +135,23 @@ public class IConducteurDAOimplement implements IConducteurDAO {
 
     }
 
-    // La methode qui met à jour le statut du taxi apres avoir ete affecte a un conducteur
-    /*public void updateTaxiStatus() {
+    // La methode qui met à jour le statut du taxi apres avoir ete choisi pour une reservation
+    public void updateTaxiStatus(String matricule) {
         String mat = selectRandomMatricule();
         try {
-            if (!mat.equals("")) {
                 stmt3 = conn.prepareStatement("UPDATE taxi SET status = ? WHERE matricule = ?");
                 stmt3.setString(1, "Occupe");
-                stmt3.setString(2, mat );
+                stmt3.setString(2, matricule );
                 stmt3.executeUpdate();
                 conn.commit();
-                System.out.println("done");
-            }
+                System.out.println("status change");
+
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    */
+
 
     public void conducteurOfATaxi(String matriule) {
         try {
