@@ -1,8 +1,8 @@
 package Business;
 
-import java.sql.Time;
-import java.util.Date;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 public class Reservation {
     private Client client;
     private Conducteur conducteur;
@@ -12,15 +12,17 @@ public class Reservation {
     private String typePaiement;
     private float tarif;
 
-    private Date d;
-    private Time heure;
+    private LocalDate d;
+    private LocalTime heure;
 
-    public Reservation(String lieuSource, String lieuDestination, float tarif, Date d, Time heure) {
+    public Reservation(String lieuSource, String lieuDestination, String typePaiement, float tarif, LocalDate d, LocalTime heure, Client cl) {
         this.lieuSource = lieuSource;
         this.lieuDestination = lieuDestination;
         this.tarif = tarif;
         this.d = d;
         this.heure = heure;
+        this.client = cl;
+        this.typePaiement = typePaiement;
     }
 
     public String getLieuSource() {
@@ -63,19 +65,19 @@ public class Reservation {
         this.tarif = tarif;
     }
 
-    public java.sql.Date getD() {
-        return (java.sql.Date) d;
+    public LocalDate getD() {
+        return d;
     }
 
-    public void setD(Date d) {
+    public void setD(LocalDate d) {
         this.d = d;
     }
 
-    public Time getHeure() {
+    public LocalTime getHeure() {
         return heure;
     }
 
-    public void setHeure(Time heure) {
+    public void setHeure(LocalTime heure) {
         this.heure = heure;
     }
     public String getTypePaiement() {

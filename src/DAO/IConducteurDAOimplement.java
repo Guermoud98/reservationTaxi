@@ -1,12 +1,14 @@
 package DAO;
 
 import Business.Personne;
-import Business.Taxi;
+
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -171,14 +173,15 @@ public class IConducteurDAOimplement implements IConducteurDAO {
         }
 
     }
-    public int getRandomConducteur() {
-        int idCond = 0;
+    public List<Object> getRandomConducteur() {
+        List<Object> l = new ArrayList<>();
         try {
-            stmt2 = conn.prepareStatement("SELECT TOP 1 idConducteur, nom FROM conducteur  ORDER BY NEWID()");
+            stmt2 = conn.prepareStatement("SELECT TOP 1 idConducteur, matricule FROM conducteur  ORDER BY NEWID()");
             rs = stmt2.executeQuery();
             while(rs.next()) {
-                 idCond = rs.getInt("idConducteur");
-                System.out.println("nom: " + rs.getString("nom"));
+                 l.add(rs.getInt("idConducteur"));
+                 l.add(rs.getString("matricule"));
+                System.out.println(" matricule: " + rs.getString("matricule"));
             }
             //updateTaxiStatus();
 
@@ -186,6 +189,6 @@ public class IConducteurDAOimplement implements IConducteurDAO {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return idCond;
+        return l;
     }
 }

@@ -18,4 +18,7 @@ public class Conducteur extends Personne{
     public void setTaxi(Taxi taxi) {
         this.taxi = taxi;
     }
+    public String getMatricule() {
+        return taxi.getMatricule();
+    }
 }

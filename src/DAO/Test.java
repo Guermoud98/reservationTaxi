@@ -3,14 +3,21 @@ import Business.*;
 
 import java.sql.*;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 public class Test {
     public static void main (String [] args){
+        LocalDate date = LocalDate.now();
+        LocalTime time = LocalTime.now();
         Connection conn = ConnectionDB.getConnexion();
+        IReservationDAO res = new IReservationDAOImplement();
         Conducteur cond = new Conducteur("amal", "bent", "3453456", "amal.bn@gmail.com", "Am12#");
-
+        Client cl = new Client("hanan", "fra", "06789", "hanane.ad@gmail.com", "Hann@12");
         IConducteurDAO c = new IConducteurDAOimplement();
         //c.register(cond);
-        System.out.println(c.getRandomConducteur());
+        Reservation r = new Reservation("Mhamid 10", "Bab Doukala","Espece" ,40.0f, date, time, cl);
+        res.insertReservation(r);
         //c.login("jacki.f@gmail.com", "Ja@18");
 
         //IClientDAO i = new IClientDAOImplement();
