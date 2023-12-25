@@ -12,7 +12,7 @@ public class Test {
         LocalTime time = LocalTime.now();
         Connection conn = ConnectionDB.getConnexion();
         IReservationDAO res = new IReservationDAOImplement();
-        Conducteur cond = new Conducteur("amal", "bent", "3453456", "amal.bn@gmail.com", "Am12#");
+        Conducteur cond = new Conducteur("Adam", "Smith", "0645365478", "adam.sm@gmail.com", "Aq67@");
         Client cl = new Client("meriem", "aitAli", "0656787656", "meriem.ait@gmail.com", "Merry@1");
         IConducteurDAO c = new IConducteurDAOimplement();
         //c.register(cond);
