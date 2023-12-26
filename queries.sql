@@ -28,6 +28,7 @@ CREATE TABLE taxi (
 
 );
 SELECT * FROM taxi;
+
 DELETE taxi;
 DROP TABLE taxi;
 UPDATE taxi SET affectationConducteur= 'Non' WHERE matricule = 'VWX567';
@@ -77,6 +78,7 @@ ALTER COLUMN lieuSource VARCHAR(255);
 ALTER TABLE reservation
 ALTER COLUMN lieuDestination VARCHAR(255);
 SELECT * FROM reservation;
+DELETE FROM reservation WHERE idReservation = 4;
 DROP TABLE reservation;
 
 

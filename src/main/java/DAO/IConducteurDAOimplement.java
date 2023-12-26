@@ -195,7 +195,7 @@ public class IConducteurDAOimplement implements IConducteurDAO {
     }
     //Lorsqu'un conducteur est inscrit , on lui affecte un taxi, dans ce cas nous devons change la colonne affecationConducteuur
     public void updateTaxiAffectationConducteur(String matricule) {
-        String mat = selectRandomMatricule();
+        //String mat = selectRandomMatricule();
         try {
             stmt3 = conn.prepareStatement("UPDATE taxi SET affectationConducteur = ? WHERE matricule = ?");
             stmt3.setString(1, "Oui");

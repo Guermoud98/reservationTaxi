@@ -12,11 +12,11 @@ public class Test {
      LocalTime time = LocalTime.now();
      Connection conn = ConnectionDB.getConnexion();
      IReservationDAO res = new IReservationDAOImplement();
-     Conducteur cond = new Conducteur("Adam", "Smith", "0645365478", "adam.sm@gmail.com", "Aq67@");
-     Client cl = new Client("meriem", "aitAli", "0656787656", "meriem.ait@gmail.com", "Merry@1");
-     IConducteurDAO c = new IConducteurDAOimplement();
+     Conducteur cond = new Conducteur("Hamza", "Touzan", "0654378752", "hamza.touz@gmail.com", "AQ3@q12");
+     Client cl = new Client("guerra", "dalal", "1233", "guerra.dal@gmail.com", "T1a@A");
+     //IConducteurDAO c = new IConducteurDAOimplement();
      //c.register(cond);
-     Reservation r = new Reservation("Bab Doukala", "Gueliz", "Espece", 25.0f, date, time, cl);
+     //Reservation r = new Reservation("Bab Doukala", "Jamaa lfna", "Carte Bancaire", 13.0f, date, time, cl);
      //res.insertReservation(r);
      //c.login("jacki.f@gmail.com", "Ja@18");
 
