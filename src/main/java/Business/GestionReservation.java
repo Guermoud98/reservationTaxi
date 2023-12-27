@@ -57,13 +57,24 @@ public class GestionReservation {
     public HashMap<String, Float> getLongitudeLieu(String lieu) {
         HashMap<String, Float> srcLongitude = new HashMap<String, Float>();
         //request
-        JOpenCageForwardRequest requestSource = new JOpenCageForwardRequest(lieuSource);
+        JOpenCageForwardRequest request = new JOpenCageForwardRequest(lieu);
         //response
-        JOpenCageResponse responseSource = key.forward(requestSource);
+        JOpenCageResponse response = key.forward(request);
         //firstPosition : // get the coordinate pair of the first result
-        JOpenCageLatLng firstResultLatLngSource = responseSource.getFirstPosition();
-        srcLongitude.put("Longitude", Float.parseFloat(firstResultLatLngSource.getLng().toString())); // on fait le parse car firstResultLatLngSource.getLng().toString() est un string
+        JOpenCageLatLng firstResult = response.getFirstPosition();
+        srcLongitude.put("Longitude", Float.parseFloat(firstResult.getLng().toString())); // on fait le parse car firstResultLatLngSource.getLng().toString() retourne un string
         return srcLongitude;
+    }
+    public HashMap<String, Float> getLatitudeLieu(String lieu) {
+        HashMap<String, Float> srcLatitude = new HashMap<String, Float>();
+        //request
+        JOpenCageForwardRequest request = new JOpenCageForwardRequest(lieu);
+        //response
+        JOpenCageResponse response = key.forward(request);
+        //firstPosition : // get the coordinate pair of the first result
+        JOpenCageLatLng firstResult = response.getFirstPosition();
+        srcLatitude.put("Longitude", Float.parseFloat(firstResult.getLat().toString())); // on fait le parse car firstResult.getLng().toString() retourne un string
+        return srcLatitude;
     }
 
 }
