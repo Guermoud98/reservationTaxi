@@ -46,6 +46,7 @@ CREATE TABLE conducteur (
  matricule VARCHAR(10) FOREIGN KEY REFERENCES taxi(matricule)
 
 );
+
 SELECT * FROM conducteur;
 --Ajout d'une colonne affecte
 DELETE conducteur;

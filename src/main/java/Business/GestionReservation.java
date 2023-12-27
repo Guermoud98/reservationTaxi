@@ -51,6 +51,7 @@ public class GestionReservation {
         System.out.println("Destination info: \n Latitude: "  + firstResultLatLngDestination.getLat().toString() + ",Longitude: " + firstResultLatLngDestination.getLng().toString() + "\n");
 
     }
+    //public float calculerDistance()
 
 
 }
