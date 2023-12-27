@@ -57,8 +57,6 @@ public class IConducteurDAOimplement implements IConducteurDAO {
         Pattern pattern = Pattern.compile(regexExpression);
         Matcher matcher = pattern.matcher(email);
         boolean m = matcher.find();
-        //si m est true çad que l'expresssion matche le regexExpression
-        //System.out.println(m);
         return m;
     }
 

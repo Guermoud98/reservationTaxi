@@ -7,6 +7,8 @@ import com.byteowls.jopencage.model.JOpenCageForwardRequest;
 import com.byteowls.jopencage.model.JOpenCageLatLng;
 import com.byteowls.jopencage.model.JOpenCageResponse;
 
+import java.util.HashMap;
+
 
 public class GestionReservation {
     private String lieuDestination;
@@ -22,13 +24,13 @@ public class GestionReservation {
     }
     public void Reserver(String lieuSource, String lieuDestination) {
         /*********Source*******/
-        convertirSrcEnLongLat(lieuSource);
-        convertirDestEnLongLat(lieuDestination);
+        convertirDestSrcEnLongLat(lieuSource, lieuDestination);
+
 
 
     }
     //cette methode fait la conversion du lieuSource en latitude et longitude
-    public void convertirSrcEnLongLat(String lieuSource) {
+    public void convertirDestSrcEnLongLat(String lieuSource, String lieuDestination) {
         /*********Source*******/
         //request
         JOpenCageForwardRequest requestSource = new JOpenCageForwardRequest(lieuSource);
@@ -38,10 +40,7 @@ public class GestionReservation {
         JOpenCageLatLng firstResultLatLngSource = responseSource.getFirstPosition();
         /*********Affichage LongLati Source*******/
         System.out.println("Source info: \n Latitude: "  + firstResultLatLngSource.getLat().toString() + ",Longitude: " + firstResultLatLngSource.getLng().toString() + "\n");
-
-    }
-    //cette methode fait la conversion du lieuDestination en latitude etlongitude
-    public void convertirDestEnLongLat(String lieuDestination) {
+        /*********Destination*******/
         JOpenCageForwardRequest requestDestination = new JOpenCageForwardRequest(lieuDestination);
         //response
         JOpenCageResponse responseDestination = key.forward(requestDestination);
@@ -49,9 +48,22 @@ public class GestionReservation {
         JOpenCageLatLng firstResultLatLngDestination = responseDestination.getFirstPosition();
         /*********Affichage LongLati Destination*******/
         System.out.println("Destination info: \n Latitude: "  + firstResultLatLngDestination.getLat().toString() + ",Longitude: " + firstResultLatLngDestination.getLng().toString() + "\n");
-
     }
+    //cette methode fait la conversion du lieuDestination en latitude etlongitude
+
     //public float calculerDistance()
 
+    //cette methode retourne un hashmap qui stock la longitude et sa valeur du lieu passe en parametre
+    public HashMap<String, Float> getLongitudeLieu(String lieu) {
+        HashMap<String, Float> srcLongitude = new HashMap<String, Float>();
+        //request
+        JOpenCageForwardRequest requestSource = new JOpenCageForwardRequest(lieuSource);
+        //response
+        JOpenCageResponse responseSource = key.forward(requestSource);
+        //firstPosition : // get the coordinate pair of the first result
+        JOpenCageLatLng firstResultLatLngSource = responseSource.getFirstPosition();
+        srcLongitude.put("Longitude", Float.parseFloat(firstResultLatLngSource.getLng().toString())); // on fait le parse car firstResultLatLngSource.getLng().toString() est un string
+        return srcLongitude;
+    }
 
 }
