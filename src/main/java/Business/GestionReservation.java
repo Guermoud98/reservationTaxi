@@ -25,7 +25,7 @@ public class GestionReservation {
     public GestionReservation() {
 
     }
-    public void Reserver(String lieuSource, String lieuDestination) {
+    public void Reserver(String lieuSource, String lieuDestination, Client cl) {
         //la conversion du lieuDestination et lieuSource en latitude et longitude
         System.out.println("LongitudeSource: " + getLongitudeLieu(lieuSource));
         System.out.println("LatitudeSource: " + getLatitudeLieu(lieuSource));
@@ -38,8 +38,7 @@ public class GestionReservation {
         LocalDate date = LocalDate.now();
         float tarif = (float) CalculTarifEnFctDistance(lieuSource, lieuDestination);
         IReservationDAO res = new IReservationDAOImplement();
-        Client cl = new Client("guerra", "dalal", "1233", "guerra.dal@gmail.com", "T1a@A");
-        Reservation r = new Reservation(lieuSource, lieuDestination, "Espece", tarif , date, time, cl );
+        Reservation r = new Reservation(lieuSource, lieuDestination, "Carte Bancaire", tarif , date, time, cl );
         res.insertReservation(r);
     }
 
@@ -68,7 +67,7 @@ public class GestionReservation {
     public float calculerDistance(String lieuSource, String lieuDestination) {
         float distance = -1 ; //en km
         try {
-           //les longitudes et latitudes reçus vial'Api sont en degre
+           //les longitudes et latitudes reçus via l'Api sont en degre
            double srcLongitude = Math.toRadians(getLongitudeLieu(lieuSource));
            double srcLatitude = Math.toRadians(getLatitudeLieu(lieuSource));
            double destLongitude = Math.toRadians(getLongitudeLieu(lieuDestination));

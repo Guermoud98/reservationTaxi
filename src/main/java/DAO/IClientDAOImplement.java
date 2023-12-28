@@ -35,7 +35,7 @@ public class IClientDAOImplement implements IClientDAO {
                     else {
                         System.out.println("Client not Inserted!");
                     }
-                    System.out.println("Inserted!");
+
                 } else {
                     System.out.println("Email already exist");
                 }
