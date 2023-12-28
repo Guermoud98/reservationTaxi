@@ -27,6 +27,14 @@ public class IClientDAOImplement implements IClientDAO {
                     stmt.setString(4, p.getEmail().toLowerCase());
                     stmt.setString(5, p.getPassword());
                     stmt.executeUpdate();
+                    int n = stmt.executeUpdate();
+                    // I added these lines of code to test and verify if the row was inserted successfully
+                    if (n > 0) {
+                        System.out.println("Client Inserted!");
+                    }
+                    else {
+                        System.out.println("Client not Inserted!");
+                    }
                     System.out.println("Inserted!");
                 } else {
                     System.out.println("Email already exist");

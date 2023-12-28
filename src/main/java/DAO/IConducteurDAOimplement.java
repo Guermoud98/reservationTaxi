@@ -33,8 +33,14 @@ public class IConducteurDAOimplement implements IConducteurDAO {
                     stmt.setString(5, p.getPassword());
                     stmt.setString(6, matricule);
                     t.updateTaxiAffectationConducteur(matricule); //on met a jour de la colonne taxiAffectation = Oui
-                    stmt.executeUpdate();
-                    System.out.println("Driver Inserted!");
+                    int n = stmt.executeUpdate();
+                    if (n > 0) {
+                        System.out.println("Driver Inserted!");
+                    }
+                    else {
+                        System.out.println("Driver not Inserted!");
+                    }
+
                 } else {
                     System.out.println("Email already exist");
                 }
@@ -146,7 +152,9 @@ public class IConducteurDAOimplement implements IConducteurDAO {
     public List<Object> getRandomConducteur() {
         List<Object> l = new ArrayList<>();
         try {
-            stmt2 = conn.prepareStatement("SELECT TOP 1 idConducteur, matricule FROM conducteur  ORDER BY NEWID()");
+
+            stmt2 = conn.prepareStatement("SELECT TOP 1 c.idConducteur, c.matricule  FROM conducteur c JOIN taxi t  ON c.matricule=t.matricule WHERE t.status=? ORDER BY NEWID()");
+            stmt2.setString(1,"Disponible");
             rs = stmt2.executeQuery();
             while(rs.next()) {
                  l.add(rs.getInt("idConducteur"));

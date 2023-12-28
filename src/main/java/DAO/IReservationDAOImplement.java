@@ -53,8 +53,14 @@ public class IReservationDAOImplement implements IReservationDAO{
             stmt.setInt(8, (Integer) l.get(0)); //the cast is mandatory because the list contains objects
             stmt.setString(9, (String) l.get(1));
             taxi.updateTaxiStatus((String) l.get(1)); //pour faire un mise a jour du status du taxi choisi pour cette reservation
-            stmt.executeUpdate();
-            System.out.println("inserted reservation");
+            int n = stmt.executeUpdate();
+            if (n > 0) {
+                System.out.println("reservation inserted ");
+            }
+            else {
+                System.out.println("reservation not inserted");
+            }
+
 
         } catch (Exception e) {
             e.printStackTrace();

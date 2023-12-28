@@ -60,9 +60,14 @@ public class ITaxiDAOImplementation implements ITaxiDAO {
             stmt = conn.prepareStatement("UPDATE taxi SET status = ? WHERE matricule = ?");
             stmt.setString(1, "Occupe");
             stmt.setString(2, matricule );
-            stmt.executeUpdate();
-            conn.commit();
-            System.out.println("status changed");
+            int n = stmt.executeUpdate();
+            if (n > 0) {
+                System.out.println("status changed");
+            }
+            else {
+                System.out.println("status not Inserted!");
+            }
+
 
 
         } catch (Exception e) {

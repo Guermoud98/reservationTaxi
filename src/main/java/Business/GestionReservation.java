@@ -8,13 +8,15 @@ import com.byteowls.jopencage.model.JOpenCageLatLng;
 import com.byteowls.jopencage.model.JOpenCageResponse;
 import java.lang.Math;
 
-import java.util.HashMap;
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 
 
 public class GestionReservation {
     private String lieuDestination;
     private String lieuSource;
-    private final JOpenCageGeocoder key = new JOpenCageGeocoder("5b0f324abbff4feda79ea888b6472ae6");
+    private final JOpenCageGeocoder key = new JOpenCageGeocoder("5b0f324abbff4feda79ea888b6472ae6"); // la clé
 
     public GestionReservation(String lieuDestination, String lieuSource) {
         this.lieuDestination = lieuDestination;
@@ -31,7 +33,14 @@ public class GestionReservation {
         System.out.println("LatitudeDestination: " + getLatitudeLieu(lieuDestination));
 
         System.out.println("La distance est " + calculerDistance(lieuSource, lieuDestination));
-
+        System.out.println("la tarification est: " + CalculTarifEnFctDistance(lieuSource, lieuDestination) );
+        LocalTime time = LocalTime.now();
+        LocalDate date = LocalDate.now();
+        float tarif = (float) CalculTarifEnFctDistance(lieuSource, lieuDestination);
+        IReservationDAO res = new IReservationDAOImplement();
+        Client cl = new Client("guerra", "dalal", "1233", "guerra.dal@gmail.com", "T1a@A");
+        Reservation r = new Reservation(lieuSource, lieuDestination, "Espece", tarif , date, time, cl );
+        res.insertReservation(r);
     }
 
     //cette methode retourne un hashmap qui stock la longitude et sa valeur du lieu passe en parametre
@@ -55,8 +64,9 @@ public class GestionReservation {
         float srcLatitude = Float.parseFloat(firstResult.getLat().toString()); // on fait le parse car firstResult.getLng().toString() retourne un string
         return srcLatitude;
     }
-    public double calculerDistance(String lieuSource, String lieuDestination) {
-        double distance = -1 ; //en km
+    //distance entre lieuSource et lieuDestination
+    public float calculerDistance(String lieuSource, String lieuDestination) {
+        float distance = -1 ; //en km
         try {
            //les longitudes et latitudes reçus vial'Api sont en degre
            double srcLongitude = Math.toRadians(getLongitudeLieu(lieuSource));
@@ -66,13 +76,26 @@ public class GestionReservation {
            double rayonTerre = 6371;
            double differenceLongitude = Math.toRadians(destLongitude - srcLongitude);
            double distanceAngulaire = Math.acos(Math.sin(srcLatitude) * Math.sin(destLatitude) + Math.cos(srcLatitude) * Math.cos(destLatitude) * Math.cos(differenceLongitude));
-           distance = distanceAngulaire * rayonTerre;
+           distance = (float) (distanceAngulaire * rayonTerre);
 
        } catch (Exception e) {
            e.printStackTrace();
        }
 
         return distance;
+    }
+    public double CalculTarifEnFctDistance(String lieuSource,String lieuDestination)
+    {
+        double tarifBase = 5.0;
+
+        // Tarif par kilomètre
+        double tarifParKilometre = 2.0;
+
+        // Calcul du tarif total
+        double distance = calculerDistance(lieuSource,lieuDestination);
+        double tarifTotal = tarifBase + (tarifParKilometre * distance);
+        return tarifTotal;
+
     }
 
 }
