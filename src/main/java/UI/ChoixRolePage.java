@@ -6,6 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ChoixRolePage extends JFrame {
+    //on stocke le role choisi par l'utilisateur
+    public static String roleChoisi;
     public ChoixRolePage() {
         // Configuration de la fenêtre
         setTitle("Application de Resérvation d'un Taxi");
@@ -31,17 +33,19 @@ public class ChoixRolePage extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 // Action à effectuer lors du clic sur le bouton Connexion
                 new ConnexionInscriptionPage();
+                ChoixRolePage.roleChoisi = "conducteur";
                 System.out.println("Bouton Conducteur clique");
                 dispose();
             }
         });
 
         // Bouton "Passager"
-        JButton passagerButton = new JButton("Passager");
+        JButton passagerButton = new JButton("passager");
         passagerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new ConnexionInscriptionPage();
+                ChoixRolePage.roleChoisi = "passager";
                 System.out.println("Bouton passager clique");
                 dispose();
             }
