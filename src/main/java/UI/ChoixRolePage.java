@@ -25,19 +25,13 @@ public class ChoixRolePage extends JFrame {
 
         // Bouton "Conducteur"
         JButton conducteurButton = new JButton("Conducteur");
-        conducteurButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // Code à exécuter lorsque le bouton "Conducteur" est cliqué
-                System.out.println("Bouton Conducteur cliqué");
-            }
-        });
         // Si on clique sur le role Conducteur , la fenetre d'accueil se ferme, et celle de le ConnexionInscription s'ouvre
         conducteurButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Action à effectuer lors du clic sur le bouton Connexion
                 new ConnexionInscriptionPage();
+                System.out.println("Bouton Conducteur clique");
                 dispose();
             }
         });
@@ -47,8 +41,9 @@ public class ChoixRolePage extends JFrame {
         passagerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Code à exécuter lorsque le bouton "Passager" est cliqué
-                System.out.println("Bouton Passager cliqué");
+                new ConnexionInscriptionPage();
+                System.out.println("Bouton passager clique");
+                dispose();
             }
         });
 
