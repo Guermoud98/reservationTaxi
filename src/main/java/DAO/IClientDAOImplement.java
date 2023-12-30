@@ -90,7 +90,7 @@ public class IClientDAOImplement implements IClientDAO {
 
     }
 
-    public void login(String email, String password) {
+    public boolean login(String email, String password) {
         if (conn != null) {
             try {
                 stmt = conn.prepareStatement("SELECT idClient, password, nom FROM client WHERE email = ?");
@@ -99,6 +99,7 @@ public class IClientDAOImplement implements IClientDAO {
                 while (rs.next()) {
                     if (rs.getString("password").equals(password)) {
                         System.out.println("Welcome " + rs.getString("nom"));
+                        return true;
                     }
                 }
 
@@ -108,6 +109,7 @@ public class IClientDAOImplement implements IClientDAO {
         } else {
             System.out.println("you are not connected");
         }
+        return false;
     }
     public void updateNom(Personne p, String nom) {
         if (conn != null && isExistEmail(p.getEmail())) {
@@ -115,8 +117,14 @@ public class IClientDAOImplement implements IClientDAO {
                 stmt = conn.prepareStatement("UPDATE client SET nom = ? WHERE email = ?");
                 stmt.setString(1, nom);
                 stmt.setString(2, p.getEmail());
-                stmt.executeUpdate();
-                System.out.println("nom updated");
+                int r = stmt.executeUpdate();
+                if (r > 1) {
+                    System.out.println("nom updated");
+                }
+                else {
+                    System.out.println("nom not updated");
+                }
+
 
             } catch (Exception e) {
                 e.printStackTrace();
