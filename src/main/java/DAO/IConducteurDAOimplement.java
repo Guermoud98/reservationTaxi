@@ -93,7 +93,7 @@ public class IConducteurDAOimplement implements IConducteurDAO {
 
     }
 
-    public void login(String email, String password) {
+    public boolean login(String email, String password) {
         if (conn != null) {
             try {
                 stmt = conn.prepareStatement("SELECT idConducteur, nom, password FROM conducteur WHERE email = ?");
@@ -102,6 +102,7 @@ public class IConducteurDAOimplement implements IConducteurDAO {
                 while (rs.next()) {
                         System.out.println("Welcome " + rs.getString("nom")
                         + ", ur password : " + rs.getString("password"));
+                        return true;
                 }
 
             } catch (SQLException e) {
@@ -110,6 +111,7 @@ public class IConducteurDAOimplement implements IConducteurDAO {
         } else {
             System.out.println("you are not connected");
         }
+        return false;
     }
 
     public int getIdFromDB(Personne p) {
