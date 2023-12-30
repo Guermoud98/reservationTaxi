@@ -32,6 +32,15 @@ public class ChoixRolePage extends JFrame {
                 System.out.println("Bouton Conducteur cliqué");
             }
         });
+        // Si on clique sur le role Conducteur , la fenetre d'accueil se ferme, et celle de le ConnexionInscription s'ouvre
+        conducteurButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Action à effectuer lors du clic sur le bouton Connexion
+                new ConnexionInscriptionPage();
+                dispose();
+            }
+        });
 
         // Bouton "Passager"
         JButton passagerButton = new JButton("Passager");
