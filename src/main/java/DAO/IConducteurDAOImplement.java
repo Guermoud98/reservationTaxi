@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class IConducteurDAOimplement implements IConducteurDAO {
+public class IConducteurDAOImplement implements IConducteurDAO {
     Connection conn = ConnectionDB.getConnexion();
     PreparedStatement stmt = null;
     PreparedStatement stmt2 = null;
@@ -154,11 +154,11 @@ public class IConducteurDAOimplement implements IConducteurDAO {
         return false;
     }
 
-    public int getIdFromDB(Personne p) {
+    public int getIdFromDB(String email) {
         int id = -1;
         try {
             stmt = conn.prepareStatement("SELECT idConducteur FROM conducteur WHERE email = ?");
-            stmt.setString(1, p.getEmail());
+            stmt.setString(1, email);
             rs = stmt.executeQuery();
             while (rs.next()) {
                 id = rs.getInt("idConducteur");

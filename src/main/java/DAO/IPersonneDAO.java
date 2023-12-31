@@ -6,7 +6,7 @@ public interface IPersonneDAO {
     public boolean isValidEmail(String email);
     public boolean isValidPassword(String password);
     public boolean isExistEmail(String email);
-    public int getIdFromDB(Personne p);
+    public int getIdFromDB(String email);
 
     public boolean login(String email, String password);
    //public void consulterHistoriqueReservation();

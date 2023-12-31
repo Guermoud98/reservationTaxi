@@ -219,11 +219,11 @@ public class IClientDAOImplement implements IClientDAO {
         }
     }
 
-    public int getIdFromDB(Personne p) {
+    public int getIdFromDB(String email) {
         int id = -1;
         try {
             stmt = conn.prepareStatement("SELECT idClient FROM client WHERE email = ?");
-            stmt.setString(1, p.getEmail());
+            stmt.setString(1, email);
             rs = stmt.executeQuery();
             while (rs.next()) {
                 id = rs.getInt("idClient");
