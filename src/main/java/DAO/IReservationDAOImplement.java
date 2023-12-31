@@ -37,7 +37,7 @@ public class IReservationDAOImplement implements IReservationDAO{
     }
     public void insertReservation(Reservation r) {
 
-        int idClient = client.getIdFromDB(r.getClient().getEmail()); // l'argument est un client
+        int idClient = client.getIdFromDB(r.getClient().getEmail()); // l'argument est email
 
         List<Object> l = conducteur.getRandomConducteur(); // retourne une listequi contient l'id d'un conducteur affecté à une reservation + le matricule de son taxi
 

@@ -8,6 +8,8 @@ public interface IPersonneDAO {
     public boolean isExistEmail(String email);
     public int getIdFromDB(String email);
 
+    public Personne getPersonneById(int id);
+
     public boolean login(String email, String password);
    //public void consulterHistoriqueReservation();
    // public void updateNom(Personne p, String nom);

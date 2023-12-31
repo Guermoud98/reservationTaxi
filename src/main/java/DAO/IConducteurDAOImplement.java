@@ -1,5 +1,7 @@
 package DAO;
 
+import Business.Client;
+import Business.Conducteur;
 import Business.Personne;
 
 
@@ -171,6 +173,7 @@ public class IConducteurDAOImplement implements IConducteurDAO {
 
     }
 
+
     public void conducteurOfATaxi(String matricule) {
         try {
 
@@ -210,6 +213,28 @@ public class IConducteurDAOImplement implements IConducteurDAO {
             e.printStackTrace();
         }
         return l;
+    }
+    public Conducteur getPersonneById(int conducteurId) {
+        Conducteur conducteur = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM conducteur WHERE idConducteur = ?");
+            stmt.setInt(1, conducteurId);
+            rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                // Construisez l'objet Client à partir des résultats de la requête
+                String nom = rs.getString("nom");
+                String prenom = rs.getString("prenom");
+                String telephone = rs.getString("telephone");
+                String email = rs.getString("email");
+                String password = rs.getString("password");
+
+                conducteur = new Conducteur(nom, prenom, telephone, email, password);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return conducteur;
     }
 
 }

@@ -235,6 +235,28 @@ public class IClientDAOImplement implements IClientDAO {
         return id;
 
     }
+    public Client getPersonneById(int clientId) {
+        Client client = null;
+        try {
+            stmt = conn.prepareStatement("SELECT * FROM client WHERE idClient = ?");
+            stmt.setInt(1, clientId);
+            rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                // Construisez l'objet Client à partir des résultats de la requête
+                String nom = rs.getString("nom");
+                String prenom = rs.getString("prenom");
+                String telephone = rs.getString("telephone");
+                String email = rs.getString("email");
+                String password = rs.getString("password");
+
+                client = new Client(nom, prenom, telephone, email, password);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return client;
+    }
 
     public void logout() {
         System.exit(0);
