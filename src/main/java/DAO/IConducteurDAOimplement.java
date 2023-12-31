@@ -19,7 +19,7 @@ public class IConducteurDAOimplement implements IConducteurDAO {
     ResultSet rs = null;
     public ErreurInscription register(Personne p) {
         try {
-            //isValidEmail(p.getEmail());  On fait appel à la fonction isValidEmail pour verifier la validité de l'email
+          /*  //isValidEmail(p.getEmail());  On fait appel à la fonction isValidEmail pour verifier la validité de l'email
             if (isValidEmail(p.getEmail()) && isValidPassword(p.getPassword())) {
                 if (!isExistEmail(p.getEmail())) {
                     ITaxiDAO t = new ITaxiDAOImplementation();
@@ -54,7 +54,43 @@ public class IConducteurDAOimplement implements IConducteurDAO {
                     System.out.println("Invalid password");
                     return ErreurInscription.PASSWORD_INVALID;
                 }
+            } */
+            if (p.getNom().isEmpty() || p.getPrenom().isEmpty()|| p.getEmail().isEmpty() || p.getTelephone().isEmpty() || p.getPassword().isEmpty()) {
+                return ErreurInscription.CHAMP_VIDE;
             }
+            if (!isValidEmail(p.getEmail())) {
+                return ErreurInscription.EMAIL_INVALIDE;
+            }
+
+            // Vérification si le mot de passe est valide
+            if (!isValidPassword(p.getPassword())) {
+                return ErreurInscription.PASSWORD_INVALID;
+            }
+
+            // Vérification si l'email existe déjà
+            if (isExistEmail(p.getEmail())) {
+                return ErreurInscription.EMAIL_EXIST;
+            }
+            ITaxiDAO t = new ITaxiDAOImplementation();
+            String matricule = t.selectRandomMatricule();
+            stmt = conn.prepareStatement("INSERT INTO conducteur(nom, prenom, telephone, email, password, matricule)"
+                    + "VALUES (?, ?, ?, ?, ?, ?)");
+            stmt.setString(1, p.getNom());
+            stmt.setString(2, p.getPrenom());
+            stmt.setString(3, p.getTelephone());
+            stmt.setString(4, p.getEmail().toLowerCase());
+            stmt.setString(5, p.getPassword());
+            stmt.setString(6, matricule);
+            t.updateTaxiAffectationConducteur(matricule); //on met a jour de la colonne taxiAffectation = Oui
+            int n = stmt.executeUpdate();
+            if (n > 0) {
+                System.out.println("Conducteur Inserted!");
+
+            }
+            else {
+                System.out.println("Conducteur not Inserted!");
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
