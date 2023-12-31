@@ -2,7 +2,7 @@ package DAO;
 import Business.*;
 
 public interface IPersonneDAO {
-    public void register(Personne p);
+    public ErreurInscription register(Personne p);
     public boolean isValidEmail(String email);
     public boolean isValidPassword(String password);
     public boolean isExistEmail(String email);

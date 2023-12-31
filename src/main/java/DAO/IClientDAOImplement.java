@@ -13,42 +13,92 @@ public class IClientDAOImplement implements IClientDAO {
     Connection conn = ConnectionDB.getConnexion();
     private PreparedStatement stmt = null;
     private ResultSet rs = null;
-
-    public void register(Personne p) {
+    //la methode retourne une enumeration ErreurInscription
+    public ErreurInscription register(Personne p) {
         try {
-            //isValidEmail(p.getEmail());  On fait appel à la fonction isValidEmail pour verifier la validité de l'email
-            if (isValidEmail(p.getEmail()) && isValidPassword(p.getPassword())) {
-                if (!isExistEmail(p.getEmail())) {
-                    stmt = conn.prepareStatement("INSERT INTO client(nom, prenom, telephone, email, password)"
-                            + "VALUES (?, ?, ?, ?, ?)");
-                    stmt.setString(1, p.getNom());
-                    stmt.setString(2, p.getPrenom());
-                    stmt.setString(3, p.getTelephone());
-                    stmt.setString(4, p.getEmail().toLowerCase());
-                    stmt.setString(5, p.getPassword());
-                    int n = stmt.executeUpdate();
-                    // I added these lines of code to test and verify if the row was inserted successfully
-                    if (n > 0) {
-                        System.out.println("Client Inserted!");
-                    }
-                    else {
-                        System.out.println("Client not Inserted!");
-                    }
+            // si les champs ne sont pas vide
+            /*if (!p.getNom().isEmpty() || !p.getPrenom().isEmpty()|| !p.getEmail().isEmpty() || !p.getTelephone().isEmpty() || !p.getPassword().isEmpty()) {
+                //isValidEmail(p.getEmail());  On fait appel à la fonction isValidEmail pour verifier la validité de l'email
+                if (isValidEmail(p.getEmail()) && isValidPassword(p.getPassword())) {
+                    if (!isExistEmail(p.getEmail())) {
+                        stmt = conn.prepareStatement("INSERT INTO client(nom, prenom, telephone, email, password)"
+                                + "VALUES (?, ?, ?, ?, ?)");
+                        stmt.setString(1, p.getNom());
+                        stmt.setString(2, p.getPrenom());
+                        stmt.setString(3, p.getTelephone());
+                        stmt.setString(4, p.getEmail().toLowerCase());
+                        stmt.setString(5, p.getPassword());
+                        int n = stmt.executeUpdate();
+                        // I added these lines of code to test and verify if the row was inserted successfully
+                        if (n > 0) {
+                            System.out.println("Client Inserted!");
 
+                        }
+                        else {
+                            System.out.println("Client not Inserted!");
+                        }
+
+                    } else {
+                        System.out.println("Email already exist");
+                        return ErreurInscription.EMAIL_EXIST; //On fait appel a l'enumeration
+                    }
                 } else {
-                    System.out.println("Email already exist");
-                }
-            } else {
-                if (!isValidEmail(p.getEmail())) {
-                    System.out.println("Invalid Email");
-                }
-                if (!isValidPassword(p.getPassword())) {
-                    System.out.println("Invalid password");
+                    if (!isValidEmail(p.getEmail())) {
+                        System.out.println("Invalid Email");
+                        return ErreurInscription.EMAIL_INVALIDE;
+                    }
+                    if (!isValidPassword(p.getPassword())) {
+                        System.out.println("Invalid password");
+                        return ErreurInscription.PASSWORD_INVALID;
+                    }
                 }
             }
+            else {
+                System.out.println("les champs sont vide");
+                return ErreurInscription.CHAMP_VIDE;
+
+            } */
+            if (p.getNom().isEmpty() || p.getPrenom().isEmpty()|| p.getEmail().isEmpty() || p.getTelephone().isEmpty() || p.getPassword().isEmpty()) {
+                return ErreurInscription.CHAMP_VIDE;
+            }
+            if (!isValidEmail(p.getEmail())) {
+                return ErreurInscription.EMAIL_INVALIDE;
+            }
+
+            // Vérification si le mot de passe est valide
+            if (!isValidPassword(p.getPassword())) {
+                return ErreurInscription.PASSWORD_INVALID;
+            }
+
+            // Vérification si l'email existe déjà
+            if (isExistEmail(p.getEmail())) {
+                return ErreurInscription.EMAIL_EXIST;
+            }
+            // Aucune erreur, procéder à l'inscription
+            stmt = conn.prepareStatement("INSERT INTO client(nom, prenom, telephone, email, password)"
+                    + "VALUES (?, ?, ?, ?, ?)");
+            stmt.setString(1, p.getNom());
+            stmt.setString(2, p.getPrenom());
+            stmt.setString(3, p.getTelephone());
+            stmt.setString(4, p.getEmail().toLowerCase());
+            stmt.setString(5, p.getPassword());
+            int n = stmt.executeUpdate();
+            // I added these lines of code to test and verify if the row was inserted successfully
+            if (n > 0) {
+                System.out.println("Client Inserted!");
+
+            }
+            else {
+                System.out.println("Client not Inserted!");
+            }
+
+
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return ErreurInscription.AUCUNE_ERREUR;
     }
 
     public boolean isValidEmail(String email) {

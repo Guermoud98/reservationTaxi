@@ -17,7 +17,7 @@ public class IConducteurDAOimplement implements IConducteurDAO {
     PreparedStatement stmt = null;
     PreparedStatement stmt2 = null;
     ResultSet rs = null;
-    public void register(Personne p) {
+    public ErreurInscription register(Personne p) {
         try {
             //isValidEmail(p.getEmail());  On fait appel à la fonction isValidEmail pour verifier la validité de l'email
             if (isValidEmail(p.getEmail()) && isValidPassword(p.getPassword())) {
@@ -43,18 +43,22 @@ public class IConducteurDAOimplement implements IConducteurDAO {
 
                 } else {
                     System.out.println("Email already exist");
+                    return ErreurInscription.EMAIL_EXIST; //On fait appel a l'enumeration
                 }
             } else {
                 if (!isValidEmail(p.getEmail())) {
                     System.out.println("Invalid Email");
+                    return ErreurInscription.EMAIL_INVALIDE;
                 }
                 if (!isValidPassword(p.getPassword())) {
                     System.out.println("Invalid password");
+                    return ErreurInscription.PASSWORD_INVALID;
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return ErreurInscription.AUCUNE_ERREUR;
 
     }
 
