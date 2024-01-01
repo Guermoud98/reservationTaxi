@@ -7,6 +7,8 @@ import Session.ConducteurConnecte;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class AfficherReservationPage extends JFrame {
     private IReservationDAO reservationDAO = new IReservationDAOImplement();
@@ -26,6 +28,16 @@ public class AfficherReservationPage extends JFrame {
         gbc.gridx = 0;
         gbc.gridy = 0;
 
+        //Menu
+        JMenu menu = new JMenu("Menu");
+        // element qui constitue le Menu
+        JMenuItem e1 = new JMenuItem("Profil");
+        //barre de menu
+        JMenuBar menuBar = new JMenuBar();
+        menu.add(e1);
+        // l'ajout du menu au barre de menu
+        menuBar.add(menu);
+
         JTextArea reservationsTextArea = new JTextArea();
         reservationsTextArea.setEditable(false);
         JScrollPane scrollPane = new JScrollPane(reservationsTextArea);
@@ -34,7 +46,7 @@ public class AfficherReservationPage extends JFrame {
         panel.add(scrollPane, gbc);
 
         // Get reservations for the connected driver
-        Reservation r = reservationDAO.getReservationById(9);
+        Reservation r = reservationDAO.getReservationById(ConducteurConnecte.getConducteurId());
 
         // Display reservations in the text area
         if (r != null) {
@@ -54,6 +66,16 @@ public class AfficherReservationPage extends JFrame {
 
         setLocationRelativeTo(null);
         setVisible(true);
+
+        e1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Redirigez vers la page du profil ici
+                dispose(); // Fermez la page de réservation si nécessaire
+                new ConducteurProfilPage(); // Créez une nouvelle instance de ConducteurProfilePage
+            }
+        });
+        setJMenuBar(menuBar);
     }
 
 }

@@ -23,7 +23,7 @@ public class ConducteurProfilPage extends JFrame {
 
     private void initializeUI() {
         // on a le conducteur qui est connecte en se basant de son id
-        Conducteur c = (Conducteur) conducteur.getPersonneById(ConducteurConnecte.getConducteurId());
+        Conducteur c = (Conducteur) conducteur.getPersonneById(4);
         System.out.println(ConducteurConnecte.getConducteurId());
 
         setTitle("Conducteur Profile");
@@ -84,8 +84,12 @@ public class ConducteurProfilPage extends JFrame {
          */
         matriculeField = new JTextField(conducteur.getMatriculeConducteur(ConducteurConnecte.getConducteurId()));
         matriculeField.setEditable(false);
+        matriculeField.setPreferredSize(new Dimension(150, 25)); // Adjust the size
         panel.add(matriculeField, gbc);
+        //
 
+
+        //
         // Modify Fields Button
         gbc.gridx = 0;
         gbc.gridy = 4;
