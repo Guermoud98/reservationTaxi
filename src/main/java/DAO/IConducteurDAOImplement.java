@@ -236,5 +236,21 @@ public class IConducteurDAOImplement implements IConducteurDAO {
         }
         return conducteur;
     }
+    //pour extraire le matricule du taxi d'un conducteur
+    public String getMatriculeConducteur(int id) {
+        String  matricule = null;
+        try {
+            stmt = conn.prepareStatement("SELECT matricule FROM conducteur WHERE idConducteur = ?");
+            stmt.setInt(1, id);
+            rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                matricule = rs.getString("matricule");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return matricule;
+    }
 
 }

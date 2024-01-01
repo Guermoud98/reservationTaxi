@@ -9,7 +9,7 @@ import Session.*;
 
 public class ConnexionPage extends JFrame {
     private IClientDAO clientDao = new IClientDAOImplement();
-    private  IConducteurDAO conducteurDAO = new IConducteurDAOImplement();
+    private  IConducteurDAO conducteurDao = new IConducteurDAOImplement();
     public ConnexionPage() {
         super("Application de Resérvation d'un Taxi");
 
@@ -42,8 +42,13 @@ public class ConnexionPage extends JFrame {
                 }
                 else {
                     if("conducteur".equals(ChoixRolePage.roleChoisi)) {
-                        if(conducteurDAO.login(email, password)) {
+                        if(conducteurDao.login(email, password)) {
+                            int id = conducteurDao.getIdFromDB(email);
+                            ConducteurConnecte.setConducteurId(id);//pour savoir l'id du conducteur connecte pour lui afficher par exemple les reservations qui lui concerne
+                            System.out.println(ConducteurConnecte.getConducteurId());
                             JOptionPane.showMessageDialog(ConnexionPage.this, "Connexion réussie !","Informations de Connexion", JOptionPane.INFORMATION_MESSAGE);
+                            new ConducteurProfilePage();
+                            dispose();
                         }
                         else {
                             JOptionPane.showMessageDialog(ConnexionPage.this, "Email ou mot de passe incorrect !", "Erreur de Connexion", JOptionPane.ERROR_MESSAGE);

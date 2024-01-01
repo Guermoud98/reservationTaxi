@@ -44,7 +44,6 @@ public class ReservationPage extends JFrame {
                 }
             };
 
-
             GridBagConstraints gbc = new GridBagConstraints();
             gbc.insets = new Insets(10, 10, 10, 10); // Espacement entre les composants
 
@@ -67,14 +66,9 @@ public class ReservationPage extends JFrame {
             destinationField.setPreferredSize(new Dimension(200, 30));
             destinationField.setFont(new Font("Arial", Font.BOLD, 16)); // Ajustez la taille de la police
 
-
-
-
-
-
-
-
-
+            JLabel modePaiement = new JLabel("Mode de Paiement");
+            String[] options = {"Carte Bancaire", "Espece"}; // Création d'une liste de choix de paiement
+            JComboBox<String> comboBox = new JComboBox<>(options);
 
             JButton reserveButton = new JButton("Réserver");
             reserveButton.setFont(new Font("Arial", Font.BOLD, 16)); // Agrandir la taille de la police
@@ -90,8 +84,8 @@ public class ReservationPage extends JFrame {
 
                     // Créez un objet Client avec des valeurs fictives (à remplacer par la logique de récupération du client)
                     IClientDAO client = new IClientDAOImplement();
-                    Client c = new Client();
-                    c = (Client) client.getPersonneById(ClientConnecte.getClientId());
+                    // on affecte a l'objet c le client qui est connecte en se basant de son id, getPersonneById est une method dans l'interface IPersonneDao, ClientConnecte est la classe utilitaire;
+                    Client c =(Client) client.getPersonneById(ClientConnecte.getClientId()) ; //on fait le cast car le type attendu est Personne
                     // Construisez le message pour afficher dans la boîte de dialogue
                     String message = "Détails de la réservation :\n\n" +
                             "Lieu de départ: " + source + "\n" +
@@ -104,7 +98,7 @@ public class ReservationPage extends JFrame {
                     if (choice == JOptionPane.YES_OPTION) {
                         // Effectuez la réservation
                         GestionReservation gestionReservation = new GestionReservation();
-                        gestionReservation.Reserver(source, destination, c);
+                        gestionReservation.Reserver(source, destination, (String) comboBox.getSelectedItem(), c); //j'ai fait le cast car il retourne un objet et moi je veux un String
                             // Si la réservation a réussi
                             String msg = "tarif sera : "+gestionReservation.CalculTarifEnFctDistance(source,destination)+"DH";
                             JOptionPane.showMessageDialog(null, "Réservation effectuée avec succès !\n"+msg);
@@ -144,6 +138,14 @@ public class ReservationPage extends JFrame {
             gbc.gridx = 1;
             panel.add(destinationField, gbc);
 
+            // Add ComboBox Label
+            gbc.gridx = 0;
+            gbc.gridy = 3;
+            panel.add(modePaiement, gbc);
+
+            // Add ComboBox
+            gbc.gridx = 1;
+            panel.add(comboBox, gbc);
 
             gbc.gridx = 0;
             gbc.gridy = 4;
@@ -152,6 +154,8 @@ public class ReservationPage extends JFrame {
 
             gbc.gridx = 1;
             panel.add(cancelButton, gbc);
+
+
 
             frame.getContentPane().add(panel);
             frame.setVisible(true);
