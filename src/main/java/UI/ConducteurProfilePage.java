@@ -110,8 +110,6 @@ public class ConducteurProfilePage extends JFrame {
                 nomField.setEditable(true);
                 prenomField.setEditable(true);
                 telephoneField.setEditable(true);
-                matriculeField.setEditable(true);
-
             }
         });
 
@@ -120,6 +118,9 @@ public class ConducteurProfilePage extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Save changes (displaying a message in this example)
+                conducteur.updateNom(c, nomField.getText());
+                conducteur.updatePrenom(c, prenomField.getText());
+                conducteur.updateTelephone(c, telephoneField.getText());
                 JOptionPane.showMessageDialog(ConducteurProfilePage.this,
                         "Changes Confirmed:\nNom: " + nomField.getText() +
                                 "\nPrenom: " + prenomField.getText() +

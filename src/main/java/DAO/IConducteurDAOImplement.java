@@ -252,5 +252,75 @@ public class IConducteurDAOImplement implements IConducteurDAO {
         }
         return matricule;
     }
+    //update
+    public void updateNom(Personne p, String nom) {
+        if (conn != null && isExistEmail(p.getEmail())) {
+            try {
+                stmt = conn.prepareStatement("UPDATE conducteur SET nom = ? WHERE email = ?");
+                stmt.setString(1, nom);
+                stmt.setString(2, p.getEmail());
+                int r = stmt.executeUpdate();
+                if (r > 0) {
+                    System.out.println("nom updated");
+                }
+                else {
+                    System.out.println("nom not updated");
+                }
+
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        else {
+            System.out.println("user not connected");
+        }
+
+    }
+    public void updatePrenom(Personne p, String prenom) {
+        if (conn != null && isExistEmail(p.getEmail())) {
+            try {
+                stmt = conn.prepareStatement("UPDATE conducteur SET prenom = ? WHERE email = ?");
+                stmt.setString(1, prenom);
+                stmt.setString(2, p.getEmail());
+                int r = stmt.executeUpdate();
+                if (r > 0) {
+                    System.out.println("prenom updated");
+                }
+                else {
+                    System.out.println("prenom not updated");
+                }
+
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        else {
+            System.out.println("user not connected");
+        }
+    }
+    public void updateTelephone(Personne p, String telephone) {
+        if (conn != null && isExistEmail(p.getEmail())) {
+            try {
+                stmt = conn.prepareStatement("UPDATE conducteur SET telephone = ? WHERE email = ?");
+                stmt.setString(1, telephone);
+                stmt.setString(2, p.getEmail());
+                int r = stmt.executeUpdate();
+                if (r > 0) {
+                    System.out.println("telephone updated");
+                }
+                else {
+                    System.out.println("telephone not updated");
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        else {
+            System.out.println("user not connected");
+        }
+    }
 
 }

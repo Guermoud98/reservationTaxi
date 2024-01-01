@@ -12,9 +12,9 @@ public interface IPersonneDAO {
 
     public boolean login(String email, String password);
    //public void consulterHistoriqueReservation();
-   // public void updateNom(Personne p, String nom);
-    //public void updatePrenom(Personne p, String email);
-    //public void updateTelephone(Personne p, String telephone);
-    //public int getIdFromDB(Personne p);
+     public void updateNom(Personne p, String nom);
+     public void updatePrenom(Personne p, String email);
+     public void updateTelephone(Personne p, String telephone);
+     //public int getIdFromDB(Personne p);
     //public void logout();
 }
