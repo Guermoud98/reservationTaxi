@@ -24,8 +24,9 @@ public class ConducteurProfilPage extends JFrame {
     private void initializeUI() {
         // on a le conducteur qui est connecte en se basant de son id
         Conducteur c = (Conducteur) conducteur.getPersonneById(ConducteurConnecte.getConducteurId());
+        System.out.println(ConducteurConnecte.getConducteurId());
 
-        setTitle("Conductor Profile");
+        setTitle("Conducteur Profile");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(400, 300);
 
