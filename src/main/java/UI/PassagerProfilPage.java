@@ -1,31 +1,31 @@
 package UI;
-import Business.Conducteur;
-import DAO.IConducteurDAO;
-import DAO.IConducteurDAOImplement;
-import Session.ConducteurConnecte;
+import Business.*;
+import DAO.IClientDAO;
+import DAO.IClientDAOImplement;
+import Session.ClientConnecte;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ConducteurProfilePage extends JFrame {
+public class PassagerProfilPage extends JFrame {
 
     private JTextField nomField;
     private JTextField prenomField;
     private JTextField telephoneField;
     private JTextField matriculeField;
 
-    private IConducteurDAO conducteur = new IConducteurDAOImplement();
-    public ConducteurProfilePage() {
+    private IClientDAO client = new IClientDAOImplement();
+    public PassagerProfilPage() {
         initializeUI();
     }
 
     private void initializeUI() {
         // on a le conducteur qui est connecte en se basant de son id
-        Conducteur c = (Conducteur) conducteur.getPersonneById(ConducteurConnecte.getConducteurId());
+        Client c = (Client) client.getPersonneById(ClientConnecte.getClientId());
 
-        setTitle("Conductor Profile");
+        setTitle("Passager Profile");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(400, 300);
 
@@ -69,22 +69,6 @@ public class ConducteurProfilePage extends JFrame {
         telephoneField.setEditable(false);
         panel.add(telephoneField, gbc);
 
-        // Label and pre-filled text for Matricule du Taxi
-        gbc.gridx = 0;
-        gbc.gridy = 3;
-        JLabel matriculeLabel = new JLabel("Matricule du Taxi:");
-        matriculeLabel.setForeground(Color.WHITE);
-        panel.add(matriculeLabel, gbc);
-
-        gbc.gridx = 1;
-        /*getMatriculeConducteur : on fait appel a la method presente dans IConducteurDAO qui
-        prend en parametre un id (dans notre cas c'est l'id du conducteur connecte en utilisant la classe
-        utilitaire ConducteurConnecte) et qui retourne son matricule.
-         */
-        matriculeField = new JTextField(conducteur.getMatriculeConducteur(ConducteurConnecte.getConducteurId()));
-        matriculeField.setEditable(false);
-        panel.add(matriculeField, gbc);
-
         // Modify Fields Button
         gbc.gridx = 0;
         gbc.gridy = 4;
@@ -118,14 +102,13 @@ public class ConducteurProfilePage extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Save changes (displaying a message in this example)
-                conducteur.updateNom(c, nomField.getText());
-                conducteur.updatePrenom(c, prenomField.getText());
-                conducteur.updateTelephone(c, telephoneField.getText());
-                JOptionPane.showMessageDialog(ConducteurProfilePage.this,
+                client.updateNom(c, nomField.getText());
+                client.updatePrenom(c, prenomField.getText());
+                client.updateTelephone(c, telephoneField.getText());
+                JOptionPane.showMessageDialog(PassagerProfilPage.this,
                         "Changes Confirmed:\nNom: " + nomField.getText() +
                                 "\nPrenom: " + prenomField.getText() +
-                                "\nTelephone: " + telephoneField.getText() +
-                                "\nMatricule du Taxi: " + matriculeField.getText(),
+                                "\nTelephone: " + telephoneField.getText(),
                         "Confirmation",
                         JOptionPane.INFORMATION_MESSAGE);
             }
